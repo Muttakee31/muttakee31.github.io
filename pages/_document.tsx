@@ -3,19 +3,18 @@ import React from 'react';
 // eslint-disable-next-line @next/next/no-document-import-in-page
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 // MUI Core
-import { ServerStyleSheets } from '@material-ui/core/styles';
+import { ServerStyleSheets } from '@mui/styles';
 // Utils
-import theme from '../utils/theme';
+import {lightTheme} from '../utils/theme';
 
 class MyDocument extends Document {
     render() {
         return (
             <Html lang="en">
                 <Head>
-                    <meta name="theme-color" content={theme.palette.primary.main} />
+                    <meta name="theme-color" content={lightTheme.palette.primary.main} />
 
                     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" />
-                    <title>Portfolio</title>
                 </Head>
                 <body>
                 <Main />

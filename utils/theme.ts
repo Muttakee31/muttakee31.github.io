@@ -1,12 +1,19 @@
-import indigo from '@material-ui/core/colors/indigo';
-import pink from '@material-ui/core/colors/pink';
-import { createTheme } from '@material-ui/core/styles';
+import {indigo, pink} from "@mui/material/colors";
+import {createTheme} from "@mui/material";
 
-const theme = createTheme({
+
+export const darkTheme = createTheme({
     palette: {
+        mode: 'dark',
         primary: indigo,
         secondary: pink,
     },
 });
 
-export default theme;
+export const lightTheme = createTheme({
+    palette: {
+        mode: 'light',
+        primary: indigo,
+        secondary: pink,
+    },
+});
