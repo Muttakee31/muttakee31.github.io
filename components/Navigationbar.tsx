@@ -6,6 +6,8 @@ import Typography from '@mui/material/Typography';
 import {Link, Switch} from "@mui/material";
 import {useRouter} from 'next/router';
 import {styled} from "@mui/material/styles";
+import {darthLogo, jediLogo} from "../utils/constants";
+import {darkTheme} from "../utils/theme";
 
 const classes = {
     appBar: `appBar`,
@@ -41,7 +43,7 @@ const Root = styled('div')(( {theme} ) => ({
     }
 }));
 
-const Navigationbar = ({changeTheme}) => {
+const Navigationbar = ({themeKey, changeTheme}) => {
     const router = useRouter();
     const [checked, setChecked] = useState(-1);
 
@@ -61,9 +63,9 @@ const Navigationbar = ({changeTheme}) => {
                           color="primary"
                           style={{cursor: "pointer"}}
                           onClick={() => {
-                              router.push("index")
+                              router.push("")
                           }}
-                          className={router.pathname === "/index" ? classes.link_focused : classes.link}
+                          className={router.pathname === "/" ? classes.link_focused : classes.link}
                     >
                         Intro
                     </Link>
@@ -100,7 +102,8 @@ const Navigationbar = ({changeTheme}) => {
                     >
                         Career
                     </Link>
-                   <Switch checked={checked === 1} onChange={handleChange} />
+                    <Switch checked={checked === 1} onChange={handleChange} />
+                    <img src={themeKey===darkTheme ? darthLogo : jediLogo} alt="theme" />
                 </Toolbar>
             </AppBar>
         </Root>

@@ -41,7 +41,7 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
         </Head>
         <ThemeProvider theme={themeKey}>
           <CssBaseline />
-          <Navigationbar changeTheme={changeTheme} />
+          <Navigationbar themeKey={themeKey} changeTheme={changeTheme} />
           <Component {...pageProps} />
         </ThemeProvider>
       </>
