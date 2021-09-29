@@ -19,40 +19,33 @@ const Home: NextPage = () => {
         </h1>
 
         <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
+          I am Saad Al Muttakee. Web developer, football freak, love to sleep, watched too many sitcoms.
+          I am currently working at Enosis Solutions.
+          I also have experience of working with React, Django, NodeJS.
+          Interested in blockchain, system design and backend architecture.
+
+          <br />
         </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-            <Button color="primary" variant="contained">My App</Button>
+      <div>
+          About
+          You can contact me via --
+          <a href="mailto:muttakee9@gmail.com">
+              <img alt="Gmail" target="_blank" width="22px" src="https://cdn.worldvectorlogo.com/logos/official-gmail-icon-2020-.svg" />
           </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
+          <a href="https://www.linkedin.com/in/saad-al-muttakee-5aa399158/">
+              <img alt="LinkedIn" target="_blank" width="22px" src="https://cdn4.iconfinder.com/data/icons/social-messaging-ui-color-shapes-2-free/128/social-linkedin-circle-512.png" />
           </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
+          <a href="https://www.facebook.com/muttakee9/">
+              <img alt="Facebook" target="_blank" width="22px" src="https://i.pinimg.com/originals/af/9c/cb/af9ccb82cd058e86d5a487223980e31c.png" />
           </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
+          <a href="https://www.twitter.com/muttakee31/">
+              <img alt="Twitter" target="_blank" width="22px" src="https://i.pinimg.com/originals/af/9c/cb/af9ccb82cd058e86d5a487223980e31c.png" />
           </a>
-        </div>
+          <a href="https://www.github.com/muttakee11/">
+              <img alt="Github" target="_blank" width="22px" src="https://i.pinimg.com/originals/af/9c/cb/af9ccb82cd058e86d5a487223980e31c.png" />
+          </a>
+      </div>
+
       </main>
 
       <footer className={styles.footer}>

@@ -1,4 +1,5 @@
 export const tabs = ["Languages", "Frameworks", "Libraries", "Databases", "Others"]
+export const interests = ["Software Engineering", "Blockchain", "Cyber Security", "Cryptography"]
 export const jediLogo = "https://img.icons8.com/windows/32/000000/jedi-order.png";
 export const darthLogo = "https://img.icons8.com/ios/32/000000/darth-vader.png";
 export const entities = [
