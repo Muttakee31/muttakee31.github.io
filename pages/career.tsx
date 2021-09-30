@@ -7,64 +7,43 @@ import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
+import {careers} from "../utils/careers";
+import {Typography} from "@mui/material";
 
 const Career = () => {
     const [item, setItem] = useState({});
     return (
         <div>
-            About
             <Timeline position="alternate">
-                <TimelineItem>
-                    <TimelineSeparator>
-                        <TimelineDot />
-                        <TimelineConnector />
-                    </TimelineSeparator>
-                    <TimelineContent>
-                        <Card>
-                            <CardContent>
-                                are meladin kaj korsi
-                            </CardContent>
-                        </Card>
-                    </TimelineContent>
-                </TimelineItem>
-                <TimelineItem>
-                    <TimelineSeparator>
-                        <TimelineDot />
-                        <TimelineConnector />
-                    </TimelineSeparator>
-                    <TimelineContent>
-                        <Card>
-                            <CardContent>
-                                are meladin kaj korsi
-                            </CardContent>
-                        </Card>
-                    </TimelineContent>
-                </TimelineItem>
-                <TimelineItem>
-                    <TimelineSeparator>
-                        <TimelineDot />
-                        <TimelineConnector />
-                    </TimelineSeparator>
-                    <TimelineContent>
-                        <Card>
-                            <CardContent>
-                                are meladin kaj korsi
-                            </CardContent>
-                        </Card>
-                    </TimelineContent>
-                </TimelineItem>
-                <TimelineItem>
-                    <TimelineSeparator>
-                        <TimelineDot />
-                    </TimelineSeparator>
-                    <TimelineContent>
-                        <Card sx={{width: 300}}>
-                            <CardContent>
-                                are meladin kaj korsi
-                            </CardContent>
-                        </Card>
-                    </TimelineContent>
-                </TimelineItem>
+                {careers.map((career, index) => {
+                    return (
+                    <TimelineItem key={index}>
+                        <TimelineSeparator>
+                            <TimelineDot color={index%2===0 ? 'info':'secondary'} />
+                            <TimelineConnector />
+                        </TimelineSeparator>
+                        <TimelineContent>
+                            <Card sx={{maxWidth: '420px', background: career.color, borderRadius: '8px', marginRight: 0, boxShadow: '0 13px 19px -6px ' + career.color}}>
+                                <CardContent>
+                                    <Typography variant="h6" component="div">
+                                        {career.name}
+                                    </Typography>
+                                    <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+                                        {career.position}
+                                    </Typography>
+                                    <Typography sx={{ mb: 1.5 }} color="text.secondary">
+                                        {career.timespan}
+                                    </Typography>
+                                    <Typography variant="body2">
+                                        {career.stack}
+                                    </Typography>
+                                </CardContent>
+                            </Card>
+                        </TimelineContent>
+                    </TimelineItem>
+                    )
+                })
+                }
             </Timeline>
         </div>
     )
