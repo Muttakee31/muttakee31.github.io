@@ -1,7 +1,8 @@
 import {Container, Grid, Paper} from "@mui/material";
 import {interestColor, interests} from "../utils/constants";
+import {NextPage} from "next";
 
-const Research = () => {
+const Research : NextPage= () => {
     return (
         <Container>
             <h4>Research Interest</h4>

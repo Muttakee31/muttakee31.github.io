@@ -8,10 +8,10 @@ import TimelineDot from '@mui/lab/TimelineDot';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import {careers} from "../utils/careers";
-import {Typography} from "@mui/material";
+import {Slide, Typography} from "@mui/material";
+import {NextPage} from "next";
 
-const Career = () => {
-    const [item, setItem] = useState({});
+const Career: NextPage = () => {
     return (
         <div>
             <Timeline position="alternate">
@@ -23,22 +23,27 @@ const Career = () => {
                             <TimelineConnector />
                         </TimelineSeparator>
                         <TimelineContent>
-                            <Card sx={{maxWidth: '420px', background: career.color, borderRadius: '8px', marginRight: 0, boxShadow: '0 13px 19px -6px ' + career.color}}>
-                                <CardContent>
-                                    <Typography variant="h6" component="div">
-                                        {career.name}
-                                    </Typography>
-                                    <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                                        {career.position}
-                                    </Typography>
-                                    <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                                        {career.timespan}
-                                    </Typography>
-                                    <Typography variant="body2">
-                                        {career.stack}
-                                    </Typography>
-                                </CardContent>
-                            </Card>
+                            <div style={{display: 'flex', justifyContent: index % 2 === 0 ? "flex-start" : "flex-end", width: '100%'}}>
+                                <Slide direction={index % 2 === 0 ? "left" : "right"} in mountOnEnter unmountOnExit
+                                           style={{transitionDelay: '300ms', transitionDuration: '700ms'}}>
+                                    <Card sx={{background: career.color, width: '32vw', borderRadius: '8px', boxShadow: '0 13px 19px -6px ' + career.color}}>
+                                        <CardContent>
+                                            <Typography variant="h6" component="div">
+                                                {career.name}
+                                            </Typography>
+                                            <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+                                                {career.position}
+                                            </Typography>
+                                            <Typography sx={{ mb: 1.5 }} color="text.secondary">
+                                                {career.timespan}
+                                            </Typography>
+                                            <Typography variant="body2">
+                                                {career.stack}
+                                            </Typography>
+                                        </CardContent>
+                                    </Card>
+                                </Slide>
+                            </div>
                         </TimelineContent>
                     </TimelineItem>
                     )

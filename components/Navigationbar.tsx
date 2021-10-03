@@ -60,10 +60,10 @@ const Navigationbar = ({themeKey, changeTheme}) => {
                         Hey there, I am Saad
                     </Typography>
                     <Link variant="button"
-                          color="primary"
+                          color="inherit"
                           style={{cursor: "pointer"}}
                           onClick={() => {
-                              router.push("")
+                              router.push("/")
                           }}
                           className={router.pathname === "/" ? classes.link_focused : classes.link}
                     >
@@ -71,7 +71,7 @@ const Navigationbar = ({themeKey, changeTheme}) => {
                     </Link>
 
                     <Link variant="button"
-                          color="primary"
+                          color="inherit"
                           style={{cursor: "pointer"}}
                           onClick={() => {
                               router.push("skills")
@@ -82,7 +82,18 @@ const Navigationbar = ({themeKey, changeTheme}) => {
                     </Link>
 
                     <Link variant="button"
-                          color="primary"
+                          color="inherit"
+                          style={{cursor: "pointer"}}
+                          onClick={() => {
+                              router.push("projects")
+                          }}
+                          className={router.pathname === "/projects" ? classes.link_focused : classes.link}
+                    >
+                        Projects
+                    </Link>
+
+                    <Link variant="button"
+                          color="inherit"
                           style={{cursor: "pointer"}}
                           onClick={() => {
                               router.push("research")
@@ -93,7 +104,7 @@ const Navigationbar = ({themeKey, changeTheme}) => {
                     </Link>
 
                     <Link variant="button"
-                          color="primary"
+                          color="inherit"
                           style={{cursor: "pointer"}}
                           onClick={() => {
                               router.push("career")

@@ -31,7 +31,7 @@ export const careers : Career[] = [
     {
         name: "Bangladesh University of Engineering & Technology",
         position: "B.Sc. in Computer Science and Engineering",
-        timespan: "August, 2021 - Present",
+        timespan: "February, 2015 - April, 2019",
         stack: "",
         color: '#4cc0d7'
     },
