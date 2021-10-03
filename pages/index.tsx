@@ -1,6 +1,6 @@
 import type {NextPage} from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
+import img from 'next/img'
 import styles from '../styles/Home.module.css'
 
 const Home: NextPage = () => {
@@ -22,23 +22,24 @@ const Home: NextPage = () => {
           <br />
         </p>
       <div>
-          About
-          You can contact me via --
+          You can find me here --
+          <br />
+          <a href="https://www.github.com/muttakee11/">
+              <img src="https://img.icons8.com/ios-glyphs/48/000000/github.png" alt="GitHub"/>
+          </a>
           <a href="mailto:muttakee9@gmail.com">
-              <img alt="Gmail" target="_blank" width="22px" src="https://cdn.worldvectorlogo.com/logos/official-gmail-icon-2020-.svg" />
+              <img src="https://img.icons8.com/color/48/000000/gmail-new.png" alt="Gmail"/>
           </a>
           <a href="https://www.linkedin.com/in/saad-al-muttakee-5aa399158/">
-              <img alt="LinkedIn" target="_blank" width="22px" src="https://cdn4.iconfinder.com/data/icons/social-messaging-ui-color-shapes-2-free/128/social-linkedin-circle-512.png" />
+              <img src="https://img.icons8.com/color/48/000000/linkedin.png" alt="Linkedin"/>
           </a>
           <a href="https://www.facebook.com/muttakee9/">
-              <img alt="Facebook" target="_blank" width="22px" src="https://i.pinimg.com/originals/af/9c/cb/af9ccb82cd058e86d5a487223980e31c.png" />
+              <img src="https://img.icons8.com/color/48/000000/facebook-new.png" alt="facebook"/>
           </a>
           <a href="https://www.twitter.com/muttakee31/">
-              <img alt="Twitter" target="_blank" width="22px" src="https://i.pinimg.com/originals/af/9c/cb/af9ccb82cd058e86d5a487223980e31c.png" />
+              <img src="https://img.icons8.com/fluency/48/000000/twitter.png" alt="Twitter"/>
           </a>
-          <a href="https://www.github.com/muttakee11/">
-              <img alt="Github" target="_blank" width="22px" src="https://i.pinimg.com/originals/af/9c/cb/af9ccb82cd058e86d5a487223980e31c.png" />
-          </a>
+
       </div>
 
       </main>
@@ -51,7 +52,7 @@ const Home: NextPage = () => {
         >
           Powered by{' '}
           <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
+            <img src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
         </a>
       </footer>

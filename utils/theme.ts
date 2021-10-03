@@ -1,12 +1,12 @@
-import {indigo, pink} from "@mui/material/colors";
+import {amber, cyan, indigo, pink, red} from "@mui/material/colors";
 import {createTheme} from "@mui/material";
 
 
 export const darkTheme = createTheme({
     palette: {
         mode: 'dark',
-        primary: indigo,
-        secondary: pink,
+        primary: cyan,
+        secondary: amber,
     },
 });
 
@@ -14,6 +14,6 @@ export const lightTheme = createTheme({
     palette: {
         mode: 'light',
         primary: indigo,
-        secondary: pink,
+        secondary: red,
     },
 });

@@ -60,7 +60,7 @@ const Navigationbar = ({themeKey, changeTheme}) => {
                         Hey there, I am Saad
                     </Typography>
                     <Link variant="button"
-                          color="inherit"
+                          color="primary"
                           style={{cursor: "pointer"}}
                           onClick={() => {
                               router.push("/")
@@ -71,7 +71,7 @@ const Navigationbar = ({themeKey, changeTheme}) => {
                     </Link>
 
                     <Link variant="button"
-                          color="inherit"
+                          color="primary"
                           style={{cursor: "pointer"}}
                           onClick={() => {
                               router.push("skills")
@@ -82,7 +82,7 @@ const Navigationbar = ({themeKey, changeTheme}) => {
                     </Link>
 
                     <Link variant="button"
-                          color="inherit"
+                          color="primary"
                           style={{cursor: "pointer"}}
                           onClick={() => {
                               router.push("projects")
@@ -93,7 +93,7 @@ const Navigationbar = ({themeKey, changeTheme}) => {
                     </Link>
 
                     <Link variant="button"
-                          color="inherit"
+                          color="primary"
                           style={{cursor: "pointer"}}
                           onClick={() => {
                               router.push("research")
@@ -104,7 +104,7 @@ const Navigationbar = ({themeKey, changeTheme}) => {
                     </Link>
 
                     <Link variant="button"
-                          color="inherit"
+                          color="primary"
                           style={{cursor: "pointer"}}
                           onClick={() => {
                               router.push("career")

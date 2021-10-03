@@ -1,5 +1,5 @@
 import {Container, Grid, Paper} from "@mui/material";
-import {interestColor, interests} from "../utils/constants";
+import {interests} from "../utils/constants";
 import {NextPage} from "next";
 
 const Research : NextPage= () => {
@@ -10,7 +10,10 @@ const Research : NextPage= () => {
                 {interests.map((interest, index) => {
                     return (
                         <Grid key={index} item xs={4} style={{paddingBottom: '24px', paddingRight: '24px'}}>
-                            <Paper style={{padding: '16px', borderRadius: '4px', boxShadow: '1px 2px 4px -3px #fefefe', borderBottom: '5px solid ' + interestColor[index]}}>{interest}</Paper>
+                            <Paper style={{padding: '16px', borderRadius: '4px', boxShadow: '0 10px 14px -6px ' + interest.color ,
+                                borderBottom: '5px solid ' + interest.color}}>
+                                {interest.name}
+                            </Paper>
                         </Grid>
                         )
                     })
