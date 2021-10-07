@@ -55,7 +55,7 @@ export const projects: Project[] = [
     },*/
     {
         title: "Inspiring Bangladesh",
-        description: ["Website to show funds from donors for an volunteering organization"],
+        description: ["Website to show funds from donors for a volunteering organization"],
         stack: ["React", "Bootstrap"]
     }
 ]

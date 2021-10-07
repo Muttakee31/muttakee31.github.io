@@ -71,6 +71,11 @@ export const entities:  Entity[] = [
     },
     {
         tab: 2,
+        name: "Redux",
+        image: "https://img.icons8.com/color/48/000000/redux.png"
+    },
+    {
+        tab: 2,
         name: "SASS",
         image: "https://img.icons8.com/color/48/000000/sass.png",
     },

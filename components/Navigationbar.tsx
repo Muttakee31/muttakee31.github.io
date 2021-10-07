@@ -22,7 +22,8 @@ const Root = styled('div')(( {theme} ) => ({
     },
     [`& .${classes.toolbarPublic}`]: {
         flexWrap: 'wrap',
-        minHeight: '68px'
+        minHeight: '68px',
+        justifyContent: 'flex-end'
     },
     [`& .${classes.link}`]: {
         margin: theme.spacing(1, 1.5),
@@ -30,10 +31,10 @@ const Root = styled('div')(( {theme} ) => ({
         textDecoration: 'none'
     },
     [`& .${classes.link_focused}`]: {
-        color: '#20779f',
+        color: theme.palette.primary.main,
         textDecoration: 'none',
         margin: theme.spacing(1, 1.5),
-        borderBottomColor: '#20779F',
+        borderBottomColor: theme.palette.primary.main,
         borderBottomWidth: '2px',
         borderBottomStyle: 'solid',
         cursor: 'default',
@@ -54,13 +55,13 @@ const Navigationbar = ({themeKey, changeTheme}) => {
 
     return (
         <Root className={classes.appBar}>
-            <AppBar position="sticky" color="inherit">
+            <AppBar position="sticky" color="inherit" sx={{zIndex: 40}}>
                 <Toolbar className={classes.toolbarPublic}>
-                    <Typography variant="h5">
+                    <Typography style={{fontSize: '1.5em', marginRight: 'auto'}}>
                         Hey there, I am Saad
                     </Typography>
                     <Link variant="button"
-                          color="primary"
+                          color="inherit"
                           style={{cursor: "pointer"}}
                           onClick={() => {
                               router.push("/")
@@ -71,7 +72,7 @@ const Navigationbar = ({themeKey, changeTheme}) => {
                     </Link>
 
                     <Link variant="button"
-                          color="primary"
+                          color="inherit"
                           style={{cursor: "pointer"}}
                           onClick={() => {
                               router.push("skills")
@@ -82,7 +83,7 @@ const Navigationbar = ({themeKey, changeTheme}) => {
                     </Link>
 
                     <Link variant="button"
-                          color="primary"
+                          color="inherit"
                           style={{cursor: "pointer"}}
                           onClick={() => {
                               router.push("projects")
@@ -93,7 +94,7 @@ const Navigationbar = ({themeKey, changeTheme}) => {
                     </Link>
 
                     <Link variant="button"
-                          color="primary"
+                          color="inherit"
                           style={{cursor: "pointer"}}
                           onClick={() => {
                               router.push("research")
@@ -104,7 +105,7 @@ const Navigationbar = ({themeKey, changeTheme}) => {
                     </Link>
 
                     <Link variant="button"
-                          color="primary"
+                          color="inherit"
                           style={{cursor: "pointer"}}
                           onClick={() => {
                               router.push("career")
