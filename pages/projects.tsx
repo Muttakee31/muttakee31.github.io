@@ -1,32 +1,79 @@
 import {NextPage} from "next";
 import {projects} from "../utils/projects";
-import {Badge, Card, CardContent, Chip, Grid, Typography} from "@mui/material";
+import {Badge, Card, CardContent, Chip, Grid, ListItem, Typography} from "@mui/material";
+import {styled} from "@mui/material/styles";
+
+const classes = {
+    main: 'main',
+    container: `container`,
+    cardContainer: `cardContainer`,
+    card: 'card',
+    cardContent: 'cardContent',
+
+}
+const Root = styled('div')(( {theme} ) => ({
+    [`& .${classes.main}`]: {
+        width: '80vw',
+        marginX: '10vw'
+    },
+    [`& .${classes.container}`]: {
+        display: 'flex',
+        justifyContent: 'center',
+    },
+    [`& .${classes.cardContainer}`]: {
+        display: 'flex',
+        justifyContent: 'center'
+    },
+    [`& .${classes.card}`]: {
+        margin: '20px',
+        width: '30vw',
+        border: "2px solid",
+        padding: '16px',
+        alignSelf: 'stretch',
+        borderImage: "linear-gradient(#8635b9, #1175bd, #15c5e1) 30",
+        boxShadow:  theme.palette.mode === 'light' ? '0 30px 40px -20px #a3a5ae' : '0 30px 40px -20px #0e1e68',
+        [`&:hover`]: {
+            transform: 'translateY(-5px)'
+        }
+    },
+    [`& .${classes.cardContent}`]: {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent:'center'
+    }
+}));
 
 const Projects: NextPage = () => {
     return (
-        <Grid container sx={{display: 'flex', justifyContent: 'center'}}>
-            {projects.map((project, index) => {
-                return (
-                    <Grid key={index} item xs={10} md={4}>
-                        <Card sx={{margin: '20px', width: '30vw', border: "2px solid",
-                            boxShadow:  (theme) => theme.palette.mode === 'light' ? '0 30px 40px -20px #a3a5ae' : '0 30px 40px -20px #0e1e68',
-                            borderImage: "linear-gradient(#8635b9, #1175bd, #15c5e1) 30"}}>
-                            <Typography sx={{textAlign: 'center'}}>{project.title}</Typography>
-                            <CardContent sx={{ display: 'flex', flexDirection: 'column', justifyContent:'center'}}>
-                                <Typography sx={{textAlign: 'center'}}>{project.description}</Typography>
-                                <div style={{alignSelf: 'center'}}>
-                                    {project.stack.map((p, idx) => {
-                                    return(
-                                        <Chip label={p} color='primary' variant="outlined" key={idx} sx={{margin: 1}}/>
+        <Root className={classes.main}>
+            <Grid container className={classes.container}>
+                {projects.map((project, index) => {
+                    return (
+                        <Grid key={index} item sm={10} md={5} className={classes.cardContainer}>
+                            <Card className={classes.card}>
+                                <Typography sx={{textAlign: 'center'}}>{project.title}</Typography>
+                                <CardContent className={classes.cardContent}>
+                                    <ul>
+                                        {project.description.map((p, idx) => {
+                                            return(
+                                                <li key={idx} style={{margin: 1}}>{p}</li>
+                                            )}
                                         )}
-                                    )}
-                                </div>
-                            </CardContent>
-                        </Card>
-                    </Grid>
+                                    </ul>
+                                    <div style={{alignSelf: 'center'}}>
+                                        {project.stack.map((p, idx) => {
+                                        return(
+                                            <Chip label={p} color='primary' variant="outlined" key={idx} sx={{margin: 1}}/>
+                                            )}
+                                        )}
+                                    </div>
+                                </CardContent>
+                            </Card>
+                        </Grid>
+                    )}
                 )}
-            )}
-        </Grid>
+            </Grid>
+        </Root>
     )
 }
 
