@@ -1,6 +1,6 @@
 import {NextPage} from "next";
 import {projects} from "../utils/projects";
-import {Badge, Card, CardContent, Chip, Grid, ListItem, Typography} from "@mui/material";
+import {Card, CardContent, Chip, Grid, Grow, Typography} from "@mui/material";
 import {styled} from "@mui/material/styles";
 
 const classes = {
@@ -49,27 +49,29 @@ const Projects: NextPage = () => {
             <Grid container className={classes.container}>
                 {projects.map((project, index) => {
                     return (
-                        <Grid key={index} item sm={10} md={5} className={classes.cardContainer}>
-                            <Card className={classes.card}>
-                                <Typography sx={{textAlign: 'center'}}>{project.title}</Typography>
-                                <CardContent className={classes.cardContent}>
-                                    <ul>
-                                        {project.description.map((p, idx) => {
+                        <Grow in key={index} style={{transformOrigin: '0 0 0'}} timeout={1200}>
+                            <Grid item sm={10} md={5} className={classes.cardContainer}>
+                                <Card className={classes.card}>
+                                    <Typography sx={{textAlign: 'center'}}>{project.title}</Typography>
+                                    <CardContent className={classes.cardContent}>
+                                        <ul>
+                                            {project.description.map((p, idx) => {
+                                                return(
+                                                    <li key={idx} style={{margin: 1}}>{p}</li>
+                                                )}
+                                            )}
+                                        </ul>
+                                        <div style={{alignSelf: 'center'}}>
+                                            {project.stack.map((p, idx) => {
                                             return(
-                                                <li key={idx} style={{margin: 1}}>{p}</li>
+                                                <Chip label={p} color='primary' variant="outlined" key={idx} sx={{margin: 1}}/>
+                                                )}
                                             )}
-                                        )}
-                                    </ul>
-                                    <div style={{alignSelf: 'center'}}>
-                                        {project.stack.map((p, idx) => {
-                                        return(
-                                            <Chip label={p} color='primary' variant="outlined" key={idx} sx={{margin: 1}}/>
-                                            )}
-                                        )}
-                                    </div>
-                                </CardContent>
-                            </Card>
-                        </Grid>
+                                        </div>
+                                    </CardContent>
+                                </Card>
+                            </Grid>
+                        </Grow>
                     )}
                 )}
             </Grid>

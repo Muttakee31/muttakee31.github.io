@@ -26,8 +26,9 @@ const Research : NextPage= () => {
                 Description: Consider an online facility assignment problem where a set of facilities
                 of equal capacity - is situated on a metric space and customers arrive one by one
                 in an online manner on that space. We assign a customer to a facility before a new customer arrives. <br />
-                The objective of this problem is to minimize the sum of all assignment costs.
-
+                The objective of this problem is to minimize the sum of all assignment costs. The approach uses Voronoi Diagram to to calculate
+                a competitive ratio for facilities on a plane.
+                <br />
                 Topic:
                 <Chip label="Graph theory" color="primary" variant="outlined" sx={{m: 1}}/>
                 <Chip label="Online computation" color="primary" variant="outlined" sx={{m: 1}}/>

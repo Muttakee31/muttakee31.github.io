@@ -1,4 +1,4 @@
-import {amber, cyan, indigo, pink, red} from "@mui/material/colors";
+import {amber, cyan, indigo, red} from "@mui/material/colors";
 import {createTheme} from "@mui/material";
 
 

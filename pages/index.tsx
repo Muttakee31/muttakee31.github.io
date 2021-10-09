@@ -1,5 +1,5 @@
 import type {NextPage} from 'next'
-import {Grid} from "@mui/material";
+import {Container, Grid} from "@mui/material";
 import {styled} from "@mui/material/styles";
 
 const classes = {
@@ -9,13 +9,14 @@ const classes = {
     grid: 'grid',
     description: 'description',
     dp: 'dp',
+    imageContainer: 'imageContainer',
     image: 'image',
 
 }
 const Root = styled('div')(( {theme} ) => ({
     [`& .${classes.container}`]: {
         minHeight: '100vh',
-        padding: '0 0.5rem',
+        padding: '0 12px',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
@@ -23,7 +24,7 @@ const Root = styled('div')(( {theme} ) => ({
         height: '100vh'
     },
     [`& .${classes.main}`]: {
-        padding: '5rem 0',
+        padding: '5rem 1rem',
         flex: 1,
         display: 'flex',
         flexDirection: 'column',
@@ -40,7 +41,13 @@ const Root = styled('div')(( {theme} ) => ({
         textAlign: 'center'
     },
     [`& .${classes.dp}`]: {
-        borderRadius: '50%'
+        borderRadius: '50%',
+        padding: '8px'
+    },
+    [`& .${classes.imageContainer}`]: {
+        display: 'flex',
+        justifyContent: 'center',
+        width: '100%'
     },
     [`& .${classes.image}`]: {
         padding: 8
@@ -50,15 +57,15 @@ const Root = styled('div')(( {theme} ) => ({
 const Home: NextPage = () => {
   return (
     <Root className={classes.container}>
-      <main className={classes.main}>
+      <Container className={classes.main}>
           <Grid container className={classes.grid}>
               <Grid item md={6} className={classes.description}>
-                  I am Saad Al Muttakee.
-                  I am currently working at Enosis Solutions.
-                  I
+                  From Dhaka, Bangladesh. I Love building stuffs from scratch. Doing this since final year of graduation.
+                  Have an irreparable sleep cycle because of European football.
+                  I also watch a lot of sitcoms.
                   <br />
               </Grid>
-              <Grid item md={6} style={{display: 'flex', justifyContent: 'center'}}>
+              <Grid item md={6} className={classes.imageContainer}>
                   <img src="./dp.jpg" alt="Me" height={200} width={200} className={classes.dp} />
               </Grid>
           </Grid>
@@ -88,12 +95,12 @@ const Home: NextPage = () => {
       </h4>
       <p>
           &#127916; Series I am currently watching: Parks and recreation <br />
-          {/*&#127918; Recently played: TitanFall 2, GTA V <br />*/}
+          &#127918; Recently played: TitanFall 2, GTA V <br />
           {/*&#128517; Number of times deleting production database: 1 <br />*/}
           &#128531; Compliment that heard the most: you look like you are in 7th/8th grade. <br/>
           &#128214; Recently read: Adarsha Hindu Hotel
       </p>
-      </main>
+      </Container>
     </Root>
   )
 }
