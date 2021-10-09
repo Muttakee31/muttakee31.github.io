@@ -9,7 +9,7 @@ const Research : NextPage= () => {
             <Grid container>
                 {interests.map((interest, index) => {
                     return (
-                        <Grid key={index} item xs={4} style={{paddingBottom: '24px', paddingRight: '24px'}}>
+                        <Grid key={index} item sm={4} xs={6} style={{alignSelf: 'stretch', paddingBottom: '24px', paddingRight: '24px'}}>
                             <Paper style={{padding: '16px', borderRadius: '4px', boxShadow: '0 10px 14px -6px ' + interest.color ,
                                 borderBottom: '5px solid ' + interest.color}}>
                                 {interest.name}

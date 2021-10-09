@@ -25,10 +25,11 @@ const Root = styled('div')(( {theme} ) => ({
         justifyContent: 'center'
     },
     [`& .${classes.card}`]: {
-        margin: '20px',
-        width: '30vw',
+        margin: '24px 16px',
         border: "2px solid",
+        width: '100%',
         padding: '16px',
+        alignContent: 'stretch',
         alignSelf: 'stretch',
         borderImage: "linear-gradient(#8635b9, #1175bd, #15c5e1) 30",
         boxShadow:  theme.palette.mode === 'light' ? '0 30px 40px -20px #a3a5ae' : '0 30px 40px -20px #0e1e68',
@@ -50,7 +51,7 @@ const Projects: NextPage = () => {
                 {projects.map((project, index) => {
                     return (
                         <Grow in key={index} style={{transformOrigin: '0 0 0'}} timeout={1200}>
-                            <Grid item sm={10} md={5} className={classes.cardContainer}>
+                            <Grid item md={5} sm={5} xs={12} className={classes.cardContainer}>
                                 <Card className={classes.card}>
                                     <div style={{fontSize: '1.2em', fontWeight: 'bold', textAlign: 'center'}}>{project.title}</div>
                                     <CardContent className={classes.cardContent}>

@@ -9,12 +9,12 @@ export const interests: Interest[] = [
         color: "#e52929"
     },
     {
-        name: "Blockchain",
-        color: "#13e8e8"
-    },
-    {
         name: "Cyber Security",
         color: "#101ac1"
+    },
+    {
+        name: "Blockchain",
+        color: "#13e8e8"
     },
     {
         name: "Cryptography",
