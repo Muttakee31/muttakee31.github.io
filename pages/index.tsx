@@ -50,7 +50,11 @@ const Root = styled('div')(( {theme} ) => ({
         width: '100%'
     },
     [`& .${classes.image}`]: {
-        padding: 8
+        margin: 8,
+        transition: 'transform 0.25s',
+        [`&:hover`]: {
+            transform: 'scale(1.15)'
+        }
     }
 }));
 
@@ -74,20 +78,20 @@ const Home: NextPage = () => {
           You can find me here --
           <br />
           <br />
-          <a href="https://www.github.com/muttakee11/" className={classes.image} target="_blank" rel="noreferrer">
-              <img src="https://img.icons8.com/ios-glyphs/48/000000/github.png" alt="GitHub"/>
+          <a href="https://www.github.com/muttakee11/" target="_blank" rel="noreferrer">
+              <img src="https://img.icons8.com/ios-glyphs/48/000000/github.png" alt="GitHub" className={classes.image}/>
           </a>
-          <a href="mailto:muttakee9@gmail.com" target="_blank" rel="noreferrer" className={classes.image}>
-              <img src="https://img.icons8.com/color/48/000000/gmail-new.png" alt="Gmail"/>
+          <a href="mailto:muttakee9@gmail.com" target="_blank" rel="noreferrer">
+              <img src="https://img.icons8.com/color/48/000000/gmail-new.png" alt="Gmail" className={classes.image}/>
           </a>
-          <a href="https://www.linkedin.com/in/saad-al-muttakee-5aa399158/" className={classes.image}>
-              <img src="https://img.icons8.com/color/48/000000/linkedin.png" alt="Linkedin"/>
+          <a href="https://www.linkedin.com/in/saad-al-muttakee-5aa399158/">
+              <img src="https://img.icons8.com/color/48/000000/linkedin.png" alt="Linkedin" className={classes.image}/>
           </a>
-          <a href="https://www.facebook.com/muttakee9/" target="_blank" className={classes.image} rel="noreferrer">
-              <img src="https://img.icons8.com/color/48/000000/facebook-new.png" alt="facebook"/>
+          <a href="https://www.facebook.com/muttakee9/" target="_blank" rel="noreferrer">
+              <img src="https://img.icons8.com/color/48/000000/facebook-new.png" alt="facebook" className={classes.image}/>
           </a>
-          <a href="https://www.twitter.com/muttakee31/" target="_blank" className={classes.image} rel="noreferrer">
-              <img src="https://img.icons8.com/fluency/48/000000/twitter.png" alt="Twitter"/>
+          <a href="https://www.twitter.com/muttakee31/" target="_blank" rel="noreferrer">
+              <img src="https://img.icons8.com/fluency/48/000000/twitter.png" alt="Twitter" className={classes.image}/>
           </a>
       </div>
       <h4>

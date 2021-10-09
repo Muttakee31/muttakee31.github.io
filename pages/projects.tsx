@@ -1,6 +1,6 @@
 import {NextPage} from "next";
 import {projects} from "../utils/projects";
-import {Card, CardContent, Chip, Grid, Grow, Typography} from "@mui/material";
+import {Card, CardContent, Chip, Grid, Grow} from "@mui/material";
 import {styled} from "@mui/material/styles";
 
 const classes = {
@@ -52,7 +52,7 @@ const Projects: NextPage = () => {
                         <Grow in key={index} style={{transformOrigin: '0 0 0'}} timeout={1200}>
                             <Grid item sm={10} md={5} className={classes.cardContainer}>
                                 <Card className={classes.card}>
-                                    <Typography sx={{textAlign: 'center'}}>{project.title}</Typography>
+                                    <div style={{fontSize: '1.2em', fontWeight: 'bold', textAlign: 'center'}}>{project.title}</div>
                                     <CardContent className={classes.cardContent}>
                                         <ul>
                                             {project.description.map((p, idx) => {

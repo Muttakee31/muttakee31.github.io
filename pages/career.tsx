@@ -1,4 +1,3 @@
-import {useState} from "react";
 import Timeline from "@mui/lab/Timeline";
 import TimelineItem from "@mui/lab/TimelineItem";
 import TimelineSeparator from '@mui/lab/TimelineSeparator';
@@ -8,7 +7,7 @@ import TimelineDot from '@mui/lab/TimelineDot';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import {careers} from "../utils/careers";
-import {Slide, Typography} from "@mui/material";
+import {Slide} from "@mui/material";
 import {NextPage} from "next";
 
 const Career: NextPage = () => {
@@ -28,18 +27,18 @@ const Career: NextPage = () => {
                                            style={{transitionDelay: '300ms', transitionDuration: '700ms'}}>
                                     <Card sx={{background: career.color, width: '32vw', borderRadius: '8px', boxShadow: '0 13px 19px -6px ' + career.color}}>
                                         <CardContent>
-                                            <Typography variant="h6" component="div">
+                                            <div style={{fontWeight: 400, fontSize: '1em'}}>
                                                 {career.name}
-                                            </Typography>
-                                            <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+                                            </div>
+                                            <div style={{ fontSize: '0.8em' }}>
                                                 {career.position}
-                                            </Typography>
-                                            <Typography sx={{ mb: 1.5 }} color="text.secondary">
+                                            </div>
+                                            <div style={{ fontSize: '0.8em', marginBottom: 1.5 }}>
                                                 {career.timespan}
-                                            </Typography>
-                                            <Typography variant="body2">
+                                            </div>
+                                            <div style={{fontSize: '0.75em'}}>
                                                 {career.stack}
-                                            </Typography>
+                                            </div>
                                         </CardContent>
                                     </Card>
                                 </Slide>

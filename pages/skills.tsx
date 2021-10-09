@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import {ReactNode, SyntheticEvent, useState} from "react";
-import {Box, Card, Grid, Tab, Tabs, Container, Typography, Zoom} from "@mui/material";
+import {Box, Card, Container, Grid, Tab, Tabs, Zoom} from "@mui/material";
 import {tabs} from "../utils/constants";
 import {entities} from "../utils/entities";
 import {NextPage} from "next";
@@ -108,7 +108,7 @@ const Skills: NextPage = () => {
                                         <Zoom in style={{ transitionDelay: '400ms', transitionDuration: '600ms'}}>
                                             <Card key={index} className={classes.card}>
                                                 <img src={t.image} alt={t.name} height={48} />
-                                                <Typography sx={{textAlign: 'center'}}>{t.name}</Typography>
+                                                <div style={{textAlign: 'center'}}>{t.name}</div>
                                             </Card>
                                         </Zoom>
                                     </Grid>
