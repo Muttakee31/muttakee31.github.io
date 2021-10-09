@@ -1,8 +1,7 @@
 import * as React from 'react';
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
 import {Link, Switch, Theme} from "@mui/material";
 import {useRouter} from 'next/router';
 import {styled} from "@mui/material/styles";
@@ -53,6 +52,12 @@ const Navigationbar = ({themeKey, changeTheme}: navProps) => {
     const router = useRouter();
     const [checked, setChecked] = useState(-1);
 
+    useEffect(()=> {
+        if (window.localStorage?.getItem('theme') === '1') {
+            setChecked(1);
+        }
+    }, [])
+
     const handleChange = () => {
         setChecked(checked * -1);
         changeTheme();
@@ -62,9 +67,9 @@ const Navigationbar = ({themeKey, changeTheme}: navProps) => {
         <Root className={classes.appBar}>
             <AppBar position="sticky" color="inherit" sx={{zIndex: 40}}>
                 <Toolbar className={classes.toolbarPublic}>
-                    <Typography style={{fontSize: '1.5em', marginRight: 'auto'}}>
+                    <div style={{fontSize: '1.5em', marginRight: 'auto'}}>
                         Hey there, I am Saad
-                    </Typography>
+                    </div>
                     <Link variant="button"
                           color="inherit"
                           style={{cursor: "pointer"}}
