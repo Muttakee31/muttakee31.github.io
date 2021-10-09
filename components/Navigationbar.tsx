@@ -3,7 +3,7 @@ import {useState} from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import {Link, Switch} from "@mui/material";
+import {Link, Switch, Theme} from "@mui/material";
 import {useRouter} from 'next/router';
 import {styled} from "@mui/material/styles";
 import {darthLogo, jediLogo} from "../utils/constants";
@@ -44,7 +44,12 @@ const Root = styled('div')(( {theme} ) => ({
     }
 }));
 
-const Navigationbar = ({themeKey, changeTheme}) => {
+type navProps = {
+    themeKey: Theme,
+    changeTheme: ()=> void
+}
+
+const Navigationbar = ({themeKey, changeTheme}: navProps) => {
     const router = useRouter();
     const [checked, setChecked] = useState(-1);
 

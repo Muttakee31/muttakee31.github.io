@@ -1,5 +1,4 @@
 import type {NextPage} from 'next'
-import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Image from 'next/image'
 import {Grid} from "@mui/material";
@@ -12,8 +11,8 @@ const Home: NextPage = () => {
               <Grid item md={6} className={styles.description}>
                   I am Saad Al Muttakee. Web developer, football freak, love to sleep, watched too many sitcoms.
                   I am currently working at Enosis Solutions.
-                  I also have experience of working with React, Django, NodeJS.
-                  Interested in blockchain, system design and backend architecture.
+                  I have experience of working with React, Django, NodeJS.
+                  Interested in blockchain, system design and software architecture.
                   <br />
               </Grid>
               <Grid item md={6} style={{display: 'flex', justifyContent: 'center'}}>
@@ -45,7 +44,7 @@ const Home: NextPage = () => {
             Fun fact
         </h4>
         <p>
-            &#128512; Series I am watching: Parks and recreation <br />
+            &#127916; Series I am currently watching: Parks and recreation <br />
             &#127918; Recently played: TitanFall 2, GTA V <br />
             &#128517; Number of times deleting production database: 1 <br />
             &#128531; Compliment that heard the most: you look like you are in 7th/8th grade. <br/>
