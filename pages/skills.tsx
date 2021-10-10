@@ -17,6 +17,7 @@ const classes = {
     main: 'main',
     tabContainer: `tabContainer`,
     card: 'card',
+    tab: 'tab',
     cardContent: 'cardContent',
 
 }
@@ -45,6 +46,11 @@ const Root = styled('div')(( {theme} ) => ({
         boxShadow: theme.palette.mode === 'light' ? '0px 12px 56px -10px #ccc' : '0px 12px 56px -6px #000',
         [`&:hover`]: {
             transform: 'translateY(-5px)'
+        }
+    },
+    [`& .${classes.tab}`]: {
+        [theme.breakpoints.up('sm')]: {
+            margin: 'auto'
         }
     },
     [`& .${classes.cardContent}`]: {
@@ -86,11 +92,13 @@ const Skills: NextPage = () => {
         <Root>
         <Container className={classes.main}>
             <Tabs
+                variant="scrollable"
+                allowScrollButtonsMobile
                 value={tabStatus}
                 indicatorColor="secondary"
                 textColor="secondary"
                 onChange={handleChange}
-                sx={{alignSelf: 'center'}}
+                className={classes.tab}
                 >
                 {tabs.map((t, idx) => {
                     return (

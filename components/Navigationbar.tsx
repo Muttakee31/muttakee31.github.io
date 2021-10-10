@@ -12,6 +12,7 @@ const classes = {
     appBar: `appBar`,
     toolbarPublic: `toolbar`,
     link: 'link',
+    header: 'header',
     link_focused: 'link_focused'
 }
 const Root = styled('div')(( {theme} ) => ({
@@ -22,7 +23,16 @@ const Root = styled('div')(( {theme} ) => ({
     [`& .${classes.toolbarPublic}`]: {
         flexWrap: 'wrap',
         minHeight: '68px',
-        justifyContent: 'flex-end'
+        [theme.breakpoints.up('sm')]: {
+            justifyContent: 'flex-end'
+        }
+    },
+    [`& .${classes.header}`]: {
+        fontSize: '1.5em',
+        marginRight: 'auto',
+        [theme.breakpoints.down('sm')]: {
+            display: 'none'
+        }
     },
     [`& .${classes.link}`]: {
         margin: theme.spacing(1, 1.5),
@@ -67,7 +77,7 @@ const Navigationbar = ({themeKey, changeTheme}: navProps) => {
         <Root className={classes.appBar}>
             <AppBar position="sticky" color="inherit" sx={{zIndex: 40}}>
                 <Toolbar className={classes.toolbarPublic}>
-                    <div style={{fontSize: '1.5em', marginRight: 'auto'}}>
+                    <div className={classes.header}>
                         Hey there, I am Saad
                     </div>
                     <Link variant="button"

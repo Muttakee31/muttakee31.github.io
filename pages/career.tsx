@@ -9,10 +9,44 @@ import CardContent from '@mui/material/CardContent';
 import {careers} from "../utils/careers";
 import {Slide} from "@mui/material";
 import {NextPage} from "next";
+import {styled} from "@mui/material/styles";
+
+const classes = {
+    main: 'main',
+    card: 'card',
+    cardContainer: 'cardContainer',
+    description: 'description'
+}
+const Root = styled('div')(( {theme} ) => ({
+    [`& .${classes.main}`]: {
+        display: 'flex',
+        flex: 1,
+        width: '100vw',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        marginTop: '24px'
+    },
+    [`& .${classes.cardContainer}`]: {
+        display: 'flex',
+        width: '100%'
+    },
+    [`& .${classes.card}`]: {
+        borderRadius: '8px',
+        [theme.breakpoints.up('sm')]: {
+            width: '32vw'
+        }
+    },
+    /*[`& .${classes.cardContent}`]: {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent:'center'
+    }*/
+}));
+
 
 const Career: NextPage = () => {
     return (
-        <div>
+        <Root>
             <Timeline position="alternate">
                 {careers.map((career, index) => {
                     return (
@@ -22,12 +56,12 @@ const Career: NextPage = () => {
                             <TimelineConnector />
                         </TimelineSeparator>
                         <TimelineContent>
-                            <div style={{display: 'flex', justifyContent: index % 2 === 0 ? "flex-start" : "flex-end", width: '100%'}}>
+                            <div className={classes.cardContainer} style={{justifyContent: index % 2 === 0 ? "flex-start" : "flex-end"}}>
                                 <Slide direction={index % 2 === 0 ? "left" : "right"} in mountOnEnter unmountOnExit
                                            style={{transitionDelay: '300ms', transitionDuration: '700ms'}}>
-                                    <Card sx={{background: career.color, width: '32vw', borderRadius: '8px', boxShadow: '0 13px 19px -6px ' + career.color}}>
+                                    <Card className={classes.card} sx={{background: career.color, boxShadow: '0 13px 19px -6px ' + career.color}}>
                                         <CardContent>
-                                            <div style={{fontWeight: 400, fontSize: '1em'}}>
+                                            <div style={{fontWeight: 500, fontSize: '1em'}}>
                                                 {career.name}
                                             </div>
                                             <div style={{ fontSize: '0.8em' }}>
@@ -36,9 +70,9 @@ const Career: NextPage = () => {
                                             <div style={{ fontSize: '0.8em', marginBottom: 1.5 }}>
                                                 {career.timespan}
                                             </div>
-                                            <div style={{fontSize: '0.75em'}}>
-                                                {career.stack}
-                                            </div>
+                                            {/*<div style={{fontSize: '0.75em'}}>*/}
+                                            {/*    {career.stack}*/}
+                                            {/*</div>*/}
                                         </CardContent>
                                     </Card>
                                 </Slide>
@@ -49,7 +83,7 @@ const Career: NextPage = () => {
                 })
                 }
             </Timeline>
-        </div>
+        </Root>
     )
 }
 

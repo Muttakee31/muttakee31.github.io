@@ -8,6 +8,9 @@ export const darkTheme = createTheme({
         primary: cyan,
         secondary: amber,
     },
+    typography: {
+        fontFamily: ['Poppins', 'sans-serif'].join(',')
+    }
 });
 
 export const lightTheme = createTheme({
@@ -16,4 +19,7 @@ export const lightTheme = createTheme({
         primary: indigo,
         secondary: red,
     },
+    typography: {
+        fontFamily: ['Poppins', 'sans-serif'].join(',')
+    }
 });
