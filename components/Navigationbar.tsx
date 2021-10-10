@@ -4,9 +4,10 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import {Switch, Tabs, Theme} from "@mui/material";
 import {styled} from "@mui/material/styles";
-import {darthLogo, jediLogo, navItems} from "../utils/constants";
+import {darthLogo, jediLogo, navItems, paths} from "../utils/constants";
 import {darkTheme} from "../utils/theme";
 import LinkTab from "./LinkTab";
+import {useRouter} from "next/router";
 
 const classes = {
     appBar: `appBar`,
@@ -58,6 +59,7 @@ type navProps = {
 }
 
 const Navigationbar = ({themeKey, changeTheme}: navProps) => {
+    const router = useRouter();
     const [value, setValue] = useState(0);
     const [checked, setChecked] = useState(-1);
 
@@ -65,6 +67,7 @@ const Navigationbar = ({themeKey, changeTheme}: navProps) => {
         if (window.localStorage?.getItem('theme') === '1') {
             setChecked(1);
         }
+        setValue(paths.indexOf(router.pathname));
     }, [])
 
     const handleThemeChange = () => {

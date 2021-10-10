@@ -7,8 +7,8 @@ export const jediLogo = "https://img.icons8.com/windows/32/000000/jedi-order.png
 // export const darthLogo = "https://img.icons8.com/nolan/32/darth-vader.png";
 // export const darthLogo = "https://img.icons8.com/dusk/32/000000/darth-vader.png";
 export const darthLogo = "https://img.icons8.com/color/32/000000/darth-vader.png";
-export const skillTabs = ["Languages", "Frameworks", "Libraries", "Databases", "Others"]
-
+export const skillTabs = ["Languages", "Frameworks", "Libraries", "Databases", "Others"];
+export const paths = ["/", "/skills", "/projects", "/research", "/career"];
 export const navItems: NavItem[] = [
     {
         title: 'About',

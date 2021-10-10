@@ -6,9 +6,23 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider } from '@mui/material/styles';
 import {lightTheme, darkTheme} from '../utils/theme';
 import Navigationbar from '../components/Navigationbar';
+import {useRouter} from "next/router";
+import {Loader} from "../components/Loader";
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
     const [themeKey, setThemeKey] = React.useState(lightTheme);
+    const router = useRouter();
+    const [pageLoading, setPageLoading] = React.useState<boolean>(false);
+
+    React.useEffect(() => {
+        const handleStart = () => { setPageLoading(true); };
+        const handleComplete = () => { setPageLoading(false); };
+
+        router.events.on('routeChangeStart', handleStart);
+        router.events.on('routeChangeComplete', handleComplete);
+        router.events.on('routeChangeError', handleComplete);
+    }, [router]);
+
     React.useEffect(() => {
     // Remove the server-side injected CSS.
         const jssStyles = document.querySelector('#jss-server-side');
@@ -38,6 +52,7 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
               {/*<link rel="apple-touch-icon" href="/images/icons/icon-192x192.png" />
               <link rel="icon" href="/images/icons/icon-72x72.png" />
               <link rel="apple-touch-icon" href="/images/icons/icon-192x192.png" />*/}
+              <link rel="icon" href="./favicon.png" />
               <meta name="apple-mobile-web-app-capable" content="yes" />
               <meta name="apple-mobile-web-app-status-bar-style" content="black" />
               <meta name="apple-mobile-web-app-title" content="Saad's Portfolio" />
@@ -58,8 +73,15 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
           </Head>
         <ThemeProvider theme={themeKey}>
           <CssBaseline />
-          <Navigationbar themeKey={themeKey} changeTheme={changeTheme} />
-          <Component {...pageProps} />
+            { pageLoading
+                ? <Loader />
+                :
+                <>
+                    <Navigationbar themeKey={themeKey} changeTheme={changeTheme} />
+                    <Component {...pageProps} />
+                </>
+            }
+
         </ThemeProvider>
       </>
   );
