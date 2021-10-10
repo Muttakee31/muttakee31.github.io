@@ -1,5 +1,5 @@
 import {Chip, Container, Grid, Paper} from "@mui/material";
-import {interests} from "../utils/constants";
+import {interests} from "../utils/interests";
 import {NextPage} from "next";
 
 const Research : NextPage= () => {

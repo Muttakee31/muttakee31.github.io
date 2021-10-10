@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import {ReactNode, SyntheticEvent, useState} from "react";
 import {Box, Card, Container, Grid, Tab, Tabs, Zoom} from "@mui/material";
-import {tabs} from "../utils/constants";
+import {skillTabs} from "../utils/constants";
 import {entities} from "../utils/entities";
 import {NextPage} from "next";
 import {styled} from "@mui/material/styles";
@@ -100,13 +100,13 @@ const Skills: NextPage = () => {
                 onChange={handleChange}
                 className={classes.tab}
                 >
-                {tabs.map((t, idx) => {
+                {skillTabs.map((t, idx) => {
                     return (
                         <Tab key={idx} label={t} />
                     )
                 })}
             </Tabs>
-            {tabs.map((t, idx) => {
+            {skillTabs.map((t, idx) => {
                 return (
                     <TabPanel key={idx} index={idx} value={tabStatus}>
                         <Grid container className={classes.tabContainer}>
