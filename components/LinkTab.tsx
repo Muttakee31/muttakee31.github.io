@@ -4,6 +4,7 @@ import {useRouter} from "next/router";
 export interface LinkTabProps {
     label: string;
     href: string;
+    className: string;
 }
 
 export default function LinkTab(props: LinkTabProps) {

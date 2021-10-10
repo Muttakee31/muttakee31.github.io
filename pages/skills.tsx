@@ -1,23 +1,18 @@
 /* eslint-disable @next/next/no-img-element */
-import {ReactNode, SyntheticEvent, useState} from "react";
-import {Box, Card, Container, Grid, Tab, Tabs, Zoom} from "@mui/material";
+import {SyntheticEvent, useState} from "react";
+import {Card, Container, Grid, Tab, Tabs, Zoom} from "@mui/material";
 import {skillTabs} from "../utils/constants";
 import {entities} from "../utils/entities";
 import {NextPage} from "next";
 import {styled} from "@mui/material/styles";
-
-interface TabPanelProps {
-    children?: ReactNode;
-    dir?: string;
-    index: number;
-    value: number;
-}
+import TabPanel from "../components/TabPanel";
 
 const classes = {
     main: 'main',
     tabContainer: `tabContainer`,
     card: 'card',
     tab: 'tab',
+    tabStyle: 'tabStyle',
     cardContent: 'cardContent',
 
 }
@@ -53,33 +48,18 @@ const Root = styled('div')(( {theme} ) => ({
             margin: 'auto'
         }
     },
+    [`& .${classes.tabStyle}`]: {
+        [theme.breakpoints.down('sm')]: {
+            minWidth: 'auto',
+            padding: '6px 8px',
+        }
+    },
     [`& .${classes.cardContent}`]: {
         display: 'flex',
         flexDirection: 'column',
         justifyContent:'center'
     }
 }));
-
-
-function TabPanel(props: TabPanelProps) {
-    const { children, value, index, ...other } = props;
-    return (
-        <div
-            role="tabpanel"
-            hidden={value !== index}
-            id={`full-width-tabpanel-${index}`}
-            aria-labelledby={`full-width-tab-${index}`}
-            {...other}
-        >
-            {value === index && (
-                <Box sx={{ padding: '24px 0' }}>
-                    {children}
-                </Box>
-            )}
-        </div>
-    );
-}
-
 
 const Skills: NextPage = () => {
     const [tabStatus, setTabStatus] = useState(0);
@@ -102,7 +82,7 @@ const Skills: NextPage = () => {
                 >
                 {skillTabs.map((t, idx) => {
                     return (
-                        <Tab key={idx} label={t} />
+                        <Tab key={idx} label={t} className={classes.tabStyle} />
                     )
                 })}
             </Tabs>

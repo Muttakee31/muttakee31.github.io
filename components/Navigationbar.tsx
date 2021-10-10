@@ -12,6 +12,8 @@ const classes = {
     appBar: `appBar`,
     toolbarPublic: `toolbar`,
     header: 'header',
+    tabContainer: 'tabContainer',
+    tabStyle: 'tabStyle'
 }
 const Root = styled('div')(( {theme} ) => ({
     [`& .${classes.appBar}`]: {
@@ -23,13 +25,29 @@ const Root = styled('div')(( {theme} ) => ({
         minHeight: '68px',
         [theme.breakpoints.up('sm')]: {
             justifyContent: 'flex-end'
-        }
+        },
+        [theme.breakpoints.down('md')]: {
+            padding: 0,
+            justifyContent: 'center'
+        },
+
     },
     [`& .${classes.header}`]: {
-        fontSize: '1.5em',
+        fontSize: '1.25em',
         marginRight: 'auto',
-        [theme.breakpoints.down('sm')]: {
+        [theme.breakpoints.down('md')]: {
             display: 'none'
+        }
+    },
+    [`& .${classes.tabContainer}`]: {
+        [theme.breakpoints.down('sm')]: {
+            width: '70%',
+        }
+    },
+    [`& .${classes.tabStyle}`]: {
+        [theme.breakpoints.down('sm')]: {
+            minWidth: 'auto',
+            padding: '6px 8px',
         }
     }
 }));
@@ -65,10 +83,10 @@ const Navigationbar = ({themeKey, changeTheme}: navProps) => {
                         Hey there, I am Saad
                     </div>
                     <Tabs value={value} onChange={handleTabChange} aria-label="nav tabs"
-                          variant="scrollable" allowScrollButtonsMobile sx={{padding: '8px'}}>
+                          variant="scrollable" allowScrollButtonsMobile className={classes.tabContainer}>
                         {navItems.map((item, idx) => {
                             return(
-                                <LinkTab label={item.title} href={item.url} key={idx} />
+                                <LinkTab label={item.title} href={item.url} key={idx} className={classes.tabStyle}/>
                             )
                         })}
                     </Tabs>
