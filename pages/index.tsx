@@ -1,5 +1,5 @@
 import type {NextPage} from 'next'
-import {Container, Grid} from "@mui/material";
+import {Container, Grid,} from "@mui/material";
 import {styled} from "@mui/material/styles";
 
 const classes = {
@@ -24,7 +24,7 @@ const Root = styled('div')(( {theme} ) => ({
         height: '100vh'
     },
     [`& .${classes.main}`]: {
-        padding: '5rem 1rem',
+        padding: '5rem 1rem 0 1rem',
         flex: 1,
         display: 'flex',
         flexDirection: 'column',
@@ -93,17 +93,20 @@ const Home: NextPage = () => {
           <a href="https://www.twitter.com/muttakee31/" target="_blank" rel="noreferrer">
               <img src="https://img.icons8.com/fluency/48/000000/twitter.png" alt="Twitter" className={classes.image}/>
           </a>
-      </div>
-      <h4>
+        </div>
+        <h4>
           Fun fact
-      </h4>
-      <p>
-          &#127916; Series I am currently watching: Parks and recreation <br />
-          &#127918; Recently played: TitanFall 2, GTA V <br />
-          {/*&#128517; Number of times deleting production database: 1 <br />*/}
-          &#128531; Compliment that heard the most: you look like you are in 7th/8th grade. <br/>
-          &#128214; Recently read: Adarsha Hindu Hotel
-      </p>
+        </h4>
+        <p>
+              &#127916; Series I am currently watching: Parks and recreation <br />
+              &#127918; Recently played: TitanFall 2, GTA V <br />
+              {/*&#128517; Number of times deleting production database: 1 <br />*/}
+              &#128531; Compliment that heard the most: you look like you are in 7th/8th grade. <br/>
+              &#128214; Recently read: Adarsha Hindu Hotel
+        </p>
+        <a href="http://barneysvideoresume.com/" target="_blank" rel="noreferrer" style={{position: 'absolute', right: 0, bottom: 0, fontSize: '0.7em'}}>
+            click here to see an ideal resume
+        </a>
       </Container>
     </Root>
   )
