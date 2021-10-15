@@ -11,6 +11,7 @@ const classes = {
     dp: 'dp',
     imageContainer: 'imageContainer',
     image: 'image',
+    footer: 'footer'
 
 }
 const Root = styled('div')(( {theme} ) => ({
@@ -42,7 +43,10 @@ const Root = styled('div')(( {theme} ) => ({
     },
     [`& .${classes.dp}`]: {
         borderRadius: '50%',
-        padding: '8px'
+        margin: '8px',
+        [theme.breakpoints.down('md')]: {
+            margin: '20px'
+        }
     },
     [`& .${classes.imageContainer}`]: {
         display: 'flex',
@@ -54,6 +58,14 @@ const Root = styled('div')(( {theme} ) => ({
         transition: 'transform 0.25s',
         [`&:hover`]: {
             transform: 'scale(1.15)'
+        }
+    },
+    [`& .${classes.footer}`]: {
+        textAlign: 'right',
+        [theme.breakpoints.up('sm')]: {
+            position: 'fixed',
+            right: 0,
+            bottom: 0
         }
     }
 }));
@@ -105,7 +117,7 @@ const Home: NextPage = () => {
               &#128214; Recently read: Adarsha Hindu Hotel
         </p>
       </Container>
-      <div style={{textAlign: 'right'}}>
+      <div className={classes.footer}>
           <a href="http://barneysvideoresume.com/" target="_blank" rel="noreferrer" style={{fontSize: '0.7em'}}>
               unimpressed?click here to view an ideal resume &#128517;
           </a>

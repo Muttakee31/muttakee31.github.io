@@ -51,7 +51,7 @@ const Root = styled('div')(( {theme} ) => ({
         padding: '5px 30px',
         borderRadius: '6px',
         color: 'white',
-        background: "linear-gradient(45deg, #8635b9, #1175bd, #15c5e1)"
+        background: "linear-gradient(45deg, #8635b9, #1175bd, #15c5e1)",
     }
 }));
 
@@ -62,7 +62,7 @@ const Projects: NextPage = () => {
                 {projects.map((project, index) => {
                     return (
                         <Grow in key={index} style={{transformOrigin: '0 0 0'}} timeout={1200}>
-                            <Grid item md={5} sm={5} xs={12} className={classes.cardContainer}>
+                            <Grid item md={5} sm={5} xs={11} className={classes.cardContainer}>
                                 <Card className={classes.card}>
                                     <div style={{fontSize: '1.2em', fontWeight: 'bold', textAlign: 'center'}}>{project.title}</div>
                                     <CardContent className={classes.cardContent}>
@@ -73,7 +73,7 @@ const Projects: NextPage = () => {
                                                 )}
                                             )}
                                         </ul>
-                                        <div className={classes.center} style={{justifyContent: 'center', alignContent: 'center'}}>
+                                        <div className={classes.center} style={{flexWrap: 'wrap'}}>
                                             {project.stack.map((p, idx) => {
                                             return(
                                                 <Chip label={p} color='primary' variant="outlined" key={idx} sx={{margin: 1}}/>
