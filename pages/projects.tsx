@@ -9,7 +9,8 @@ const classes = {
     cardContainer: `cardContainer`,
     card: 'card',
     cardContent: 'cardContent',
-
+    btnStyle: 'btnStyle',
+    center: 'center'
 }
 const Root = styled('div')(( {theme} ) => ({
     [`& .${classes.main}`]: {
@@ -41,6 +42,16 @@ const Root = styled('div')(( {theme} ) => ({
         display: 'flex',
         flexDirection: 'column',
         justifyContent:'center'
+    },
+    [`& .${classes.center}`]: {
+        display: 'flex',
+        justifyContent:'center'
+    },
+    [`& .${classes.btnStyle}`]: {
+        padding: '5px 30px',
+        borderRadius: '6px',
+        color: 'white',
+        background: "linear-gradient(45deg, #8635b9, #1175bd, #15c5e1)"
     }
 }));
 
@@ -62,13 +73,18 @@ const Projects: NextPage = () => {
                                                 )}
                                             )}
                                         </ul>
-                                        <div style={{alignSelf: 'center'}}>
+                                        <div className={classes.center} style={{justifyContent: 'center', alignContent: 'center'}}>
                                             {project.stack.map((p, idx) => {
                                             return(
                                                 <Chip label={p} color='primary' variant="outlined" key={idx} sx={{margin: 1}}/>
                                                 )}
                                             )}
                                         </div>
+                                        {project.url &&
+                                        <a href={project.url} target="_blank" rel="noreferrer" className={classes.center} style={{margin: '15px 5px'}}>
+                                            <span className={classes.btnStyle}>Click to view project</span>
+                                        </a>
+                                        }
                                     </CardContent>
                                 </Card>
                             </Grid>

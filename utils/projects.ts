@@ -39,14 +39,14 @@ export const projects: Project[] = [
         description: ["An web app for where customers can use the service to deliver parcels",
                     "Added stripe as payment gateway",
                     "Shows status of orders"],
-        stack: ["React", "Material UI"]
+        stack: ["React", "Material UI"],
     },
     {
         title: "FollowR Order Portal",
         description: ["Platform to order tracking device",
                     "Showcases trackers available for sales",
                     "Calculates the additional feature cost"],
-        stack: ["Next.js", "Bootstrap"]
+        stack: ["Next.js", "Bootstrap"],
     },
     /*{
         title: "Field Buzz Sales",
