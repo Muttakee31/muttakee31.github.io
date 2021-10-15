@@ -1,5 +1,5 @@
 import type {NextPage} from 'next'
-import {Container, Grid,} from "@mui/material";
+import {Container, Grid} from "@mui/material";
 import {styled} from "@mui/material/styles";
 
 const classes = {
@@ -21,7 +21,7 @@ const Root = styled('div')(( {theme} ) => ({
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        height: '100vh'
+        // height: '100vh'
     },
     [`& .${classes.main}`]: {
         padding: '5rem 1rem 0 1rem',
@@ -104,10 +104,12 @@ const Home: NextPage = () => {
               &#128531; Compliment that heard the most: you look like you are in 7th/8th grade. <br/>
               &#128214; Recently read: Adarsha Hindu Hotel
         </p>
-        <a href="http://barneysvideoresume.com/" target="_blank" rel="noreferrer" style={{position: 'absolute', right: 0, bottom: 0, fontSize: '0.7em'}}>
-            click here to see an ideal resume
-        </a>
       </Container>
+      <div style={{textAlign: 'right'}}>
+          <a href="http://barneysvideoresume.com/" target="_blank" rel="noreferrer" style={{fontSize: '0.7em'}}>
+              unimpressed?click here to view an ideal resume &#128517;
+          </a>
+      </div>
     </Root>
   )
 }

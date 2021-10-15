@@ -33,7 +33,7 @@ const Root = styled('div')(( {theme} ) => ({
     [`& .${classes.card}`]: {
         borderRadius: '8px',
         [theme.breakpoints.up('sm')]: {
-            width: '32vw'
+            width: '400px'
         }
     },
     /*[`& .${classes.cardContent}`]: {
