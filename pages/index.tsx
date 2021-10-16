@@ -90,7 +90,7 @@ const Home: NextPage = () => {
           You can find me here --
           <br />
           <br />
-          <a href="https://www.github.com/muttakee11/" target="_blank" rel="noreferrer">
+          <a href="https://www.github.com/muttakee31/" target="_blank" rel="noreferrer">
               <img src="https://img.icons8.com/ios-glyphs/48/000000/github.png" alt="GitHub" className={classes.image}/>
           </a>
           <a href="mailto:muttakee9@gmail.com" target="_blank" rel="noreferrer">

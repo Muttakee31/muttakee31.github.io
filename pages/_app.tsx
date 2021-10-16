@@ -56,20 +56,20 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
               <meta name="apple-mobile-web-app-capable" content="yes" />
               <meta name="apple-mobile-web-app-status-bar-style" content="black" />
               <meta name="apple-mobile-web-app-title" content="Saad's Portfolio" />
-              <meta name="description" content="List of dumb things I have done the past few decades" />
+              <meta name="description" content="Simple portfolio" />
               <meta name="theme-color" content="#2F3BA2" />
               <meta name='twitter:card' content='summary' />
               <meta name='twitter:url' content='https://muttakee31.github.io' />
               <meta name='twitter:title' content="Saad's Portfolio" />
-              <meta name='twitter:description' content='Overengineered portfolio at its best' />
-              <meta name='twitter:image' content='https://muttakee31.github.io/images/icons/icon-512x512.png' />
+              <meta name='twitter:description' content='Simple portfolio' />
+              <meta name='twitter:image' content='https://muttakee31.github.io/dp.jpg' />
               <meta name='twitter:creator' content='Saad Al Muttakee' />
               <meta property='og:type' content='website' />
               <meta property='og:title' content="Saad's Portfolio" />
-              <meta property='og:description' content='Overengineered portfolio at its best' />
+              <meta property='og:description' content='Simple Portfolio' />
               <meta property='og:site_name' content="Saad's Portfolio" />
               <meta property='og:url' content='https://muttakee31.github.io' />
-              <meta property='og:image' content='https://muttakee31.github.io/images/icons/icon-384x384.png' />
+              <meta property='og:image' content='https://muttakee31.github.io/dp.jpg' />
           </Head>
         <ThemeProvider theme={themeKey}>
           <CssBaseline />
