@@ -35,6 +35,11 @@ export const entities:  Entity[] = [
         image: "https://img.icons8.com/color/48/000000/typescript.png",
     },
     {
+        tab: 0,
+        name: "HTML",
+        image: "https://img.icons8.com/color/48/000000/html-5--v1.png",
+    },
+    {
         tab: 1,
         name: "Django",
         image: "https://img.icons8.com/color/48/000000/django.png",
@@ -45,9 +50,24 @@ export const entities:  Entity[] = [
         image: "https://img.icons8.com/color/48/000000/nodejs.png",
     },
     {
-        tab: 2,
-        name: "HTML",
-        image: "https://img.icons8.com/color/48/000000/html-5--v1.png",
+        tab: 1,
+        name: "ASP .Net Core",
+        image: "../logos/net-core.png",
+    },
+    {
+        tab: 1,
+        name: "Next.js",
+        image: "../logos/next-js.svg",
+    },
+    {
+        tab: 1,
+        name: "Angular",
+        image: "https://img.icons8.com/external-tal-revivo-shadow-tal-revivo/48/000000/external-angular-a-typescript-based-open-source-web-application-framework-logo-shadow-tal-revivo.png"
+    },
+    {
+        tab: 1,
+        name: "Ionic",
+        image: "https://img.icons8.com/external-tal-revivo-color-tal-revivo/48/000000/external-ionic-a-complete-open-source-sdk-for-hybrid-mobile-app-development-logo-color-tal-revivo.png"
     },
     {
         tab: 2,
@@ -58,11 +78,6 @@ export const entities:  Entity[] = [
         tab: 2,
         name: "React",
         image: "https://img.icons8.com/plasticine/48/000000/react.png",
-    },
-    {
-        tab: 2,
-        name: "Next.js",
-        image: "../logos/next-js.svg",
     },
     {
         tab: 2,
@@ -83,6 +98,11 @@ export const entities:  Entity[] = [
         tab: 2,
         name: "Material UI",
         image: "https://img.icons8.com/color/48/000000/material-ui.png",
+    },
+    {
+        tab: 2,
+        name: "Web3.js",
+        image: "../logos/web3js.jpg",
     },
     {
         tab: 3,
