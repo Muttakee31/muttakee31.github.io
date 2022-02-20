@@ -100,11 +100,6 @@ export const entities:  Entity[] = [
         image: "https://img.icons8.com/color/48/000000/material-ui.png",
     },
     {
-        tab: 2,
-        name: "Web3.js",
-        image: "../logos/web3js.jpg",
-    },
-    {
         tab: 3,
         name: "PostgreSQL",
         image: "https://img.icons8.com/color/48/000000/postgreesql.png",

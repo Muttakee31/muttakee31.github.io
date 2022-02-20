@@ -1,4 +1,4 @@
-import type {NextPage} from 'next'
+import type {NextPage} from 'next';
 import {Container, Grid} from "@mui/material";
 import {styled} from "@mui/material/styles";
 
@@ -12,8 +12,8 @@ const classes = {
     imageContainer: 'imageContainer',
     image: 'image',
     footer: 'footer'
-
 }
+
 const Root = styled('div')(( {theme} ) => ({
     [`& .${classes.container}`]: {
         minHeight: '100vh',
@@ -76,9 +76,11 @@ const Home: NextPage = () => {
       <Container className={classes.main}>
           <Grid container className={classes.grid}>
               <Grid item md={6} className={classes.description}>
-                  From Dhaka, Bangladesh. I Love building stuffs from scratch. Doing this since final year of graduation.
-                  Have an irreparable sleep cycle because of European football.
-                  I also watch a lot of sitcoms.
+                  I am from Dhaka, Bangladesh. Computers always amazed me since I was a child.
+                  Making the decision to pursue a degree in computer science was one of the easiest decision I ever took to be honest.
+                  I love building new stuffs and learning new tech.
+                  I have almost three years experience of working as full stack developer and specialize in geolocation and data visualization.
+                  Now I am looking for a higher studies opportunity and hoping to be a part of the community who are always pushing the boundaries of knowledge.
                   <br />
               </Grid>
               <Grid item md={6} className={classes.imageContainer}>
@@ -87,7 +89,7 @@ const Home: NextPage = () => {
           </Grid>
 
       <div style={{textAlign: 'center'}}>
-          You can find me here --
+          You can find me here -
           <br />
           <br />
           <a href="https://www.github.com/muttakee31/" target="_blank" rel="noreferrer">
@@ -110,9 +112,8 @@ const Home: NextPage = () => {
           Fun fact
         </h4>
         <p>
-              &#127916; Series I am currently watching: Parks and recreation <br />
-              &#127918; Recently played: TitanFall 2, GTA V <br />
-              {/*&#128517; Number of times deleting production database: 1 <br />*/}
+              &#127916; Series I am currently watching: Everybody Loves Reymond <br />
+              {/* &#127918; Recently played: TitanFall 2, GTA V <br /> */}
               &#128531; Compliment that heard the most: you look like you are in 7th/8th grade. <br/>
               &#128214; Recently read: Adarsha Hindu Hotel
         </p>

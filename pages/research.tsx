@@ -31,7 +31,13 @@ const Research : NextPage= () => {
                 <br />
                 Topic:
                 <Chip label="Graph theory" color="primary" variant="outlined" sx={{m: 1}}/>
-                <Chip label="Online computation" color="primary" variant="outlined" sx={{m: 1}}/>
+                <Chip label="Online algorithms" color="primary" variant="outlined" sx={{m: 1}}/>
+            </div>
+
+            <div style={{marginTop: '24px'}}>
+                <h4>Current position</h4>
+                Right now I am working with Dr. Abu Reyan Ahmed to produce new results for online facility assignment problem.
+                You can find one of our earlier collaboration <a target="_blank" rel="noreferrer" href="https://arxiv.org/pdf/2009.01446">here</a>
             </div>
         </Container>
     )
