@@ -27,6 +27,7 @@ const Root = styled('div')(( {theme} ) => ({
     [`& .${classes.main}`]: {
         padding: '5rem 1rem 0 1rem',
         flex: 1,
+        minHeight: 'calc(100vh - 80px)',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
@@ -109,13 +110,12 @@ const Home: NextPage = () => {
           </a>
         </div>
         <h4>
-          Fun fact
+          Some fun facts
         </h4>
         <p>
-              &#127916; Series I am currently watching: Everybody Loves Reymond <br />
+              &#127916; Series I am currently watching: Attack on Titan : Final Season <br />
               {/* &#127918; Recently played: TitanFall 2, GTA V <br /> */}
               &#128531; Compliment that heard the most: you look like you are in 7th/8th grade. <br/>
-              &#128214; Recently read: Adarsha Hindu Hotel
         </p>
       </Container>
       <div className={classes.footer}>

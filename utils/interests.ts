@@ -9,7 +9,7 @@ export const interests: Interest[] = [
     },
     {
         name: "Online Algorithms",
-        color: "#101ac1"
+        color: "#e58139"
     },
     {
         name: "Web Security",
@@ -17,6 +17,6 @@ export const interests: Interest[] = [
     },
     {
         name: "Distributed systems",
-        color: "#13581f"
+        color: "#1beb3f"
     }
 ]

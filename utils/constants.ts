@@ -27,7 +27,7 @@ export const navItems: NavItem[] = [
         url: '/research'
     },
     {
-        title: 'Career',
+        title: 'Timeline',
         url: '/career'
     }
 ];

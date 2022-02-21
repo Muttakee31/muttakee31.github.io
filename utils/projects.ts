@@ -6,53 +6,81 @@ export interface Project {
 }
 export const projects: Project[] = [
     {
-        title: "Dingi Developer Console",
-        description: [`Web app console to show the clients about their monthly usage and billing details of Dingi Map.`,
-            "Clients can pay bills via any payment method",
-            "Shows cost and number of API calls per service"
+        title: "Workforce tracking",
+        description: [
+            "A complete tracking solution to track worker and his distance from workplace",
+            "Collects users location from smartphone via ionic app",
+            "Shows the real-time location of worker in a web app"
         ],
-        stack: ["React", "Bootstrap", "Firebase"]
+        stack: ["ASP.NET Web API", "Angular", "Ionic"]
+    },
+    {
+        title: "Fieldbuzz Sales",
+        description: [
+            "A SaaS solution for FMCG organizations to store their data and hierarchical info",
+            "Users had the control to manipulate UI and generate reports from the user panel",
+            "Worked on data visualization and query optimization"
+        ],
+        stack: ["Django", "jQuery", "REST API"]
+    },
+    {
+        title: "Mission DMC MCQ",
+        description: [
+            "Android App for preparing for medical admission",
+            "Users can buy subscription and sit for daily exams",
+            "Uses Firebase for authentication"],
+        stack: ["Django", "Android", "Postgres", "Firebase"]
     },
     {
         title: "Shop Manager",
-        description: ["A desktop app to track daily sales, product stock and supply bills in a shop",
-                    "Shop owner can track due payment from the customer",
-                    "Generates daily bills and reports"],
+        description: [
+            "A desktop app to track daily sales, product stock and supply bills in a shop",
+            "Shop owner can track due payment from the customer",
+            "Generates daily bills and reports"],
         stack: ["React", "Electron", "Material UI"]
     },
     {
         title: "Itehk Admin Panel",
-        description: ["An admin panel that keeps track of the couriers and drivers in an online courier platform",
-                    "Shows location of drivers delivering the courier",
-                    "Onboards new drivers and admins"],
+        description: [
+            "An admin panel that keeps track of the couriers and drivers in an online courier platform",
+            "Shows location of drivers delivering the courier",
+            "Onboards new drivers and admins"],
         stack: ["React", "Material UI", "Mapbox"]
     },
     {
-        title: "Mission DMC MCQ",
-        description: ["Android App to practice medical questions and participate in daily exams",
-            "Uses SSLCommerz to activate subscription",
-            "Uses Firebase to create socially linked account"],
-        stack: ["Django", "Android", "Rest API", "Firebase"]
-    },
-    {
         title: "Itehk Web App",
-        description: ["An web app for where customers can use the service to deliver parcels",
-                    "Added stripe as payment gateway",
-                    "Shows status of orders"],
+        description: [
+            "An web app for where customers can use the service to deliver parcels",
+            "Added stripe as payment gateway",
+            "Shows status of orders"
+            ],
         stack: ["React", "Material UI"],
     },
     {
-        title: "FollowR Order Portal",
-        description: ["Platform to order tracking device",
-                    "Showcases trackers available for sales",
-                    "Calculates the additional feature cost"],
-        stack: ["Next.js", "Bootstrap"],
+        title: "Dingi Developer Console",
+        description: [
+            `Web app console to show the clients about their monthly usage and billing details of Dingi Map.`,
+            "Clients can pay bills via any payment method",
+            "Shows cost and number of API calls per service"
+            ],
+        stack: ["React", "Bootstrap", "Firebase"]
     },
-    /*{
-        title: "Field Buzz Sales",
-        description: [""],
-        stack: ["Django", "jQuery"]
-    },*/
+    {
+        title: "FollowR Enterprise",
+        description: [
+            "A complete SaaS solution for organization to track all their vehicles",
+            "Worked on showing the location and movement of vehicles real time",
+            "Integrated google maps and deployed the project for client-specific environments"],
+        stack: ["React", "Google Maps API"],
+    },
+    {
+        title: "FollowR Order Portal",
+        description: [
+            "Platform to order tracking device",
+            "Showcases trackers available for sales"
+            ],
+        stack: ["Next.js", "Bootstrap", "Nginx"],
+    },
     {
         title: "Inspiring Bangladesh",
         description: ["Website to show funds from donors for a volunteering organization"],

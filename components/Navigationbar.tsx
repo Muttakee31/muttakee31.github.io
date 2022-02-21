@@ -68,7 +68,7 @@ const Navigationbar = ({themeKey, changeTheme}: navProps) => {
             setChecked(1);
         }
         setValue(paths.indexOf(router.pathname));
-    }, [])
+    }, [router.pathname])
 
     const handleThemeChange = () => {
         setChecked(checked * -1);
