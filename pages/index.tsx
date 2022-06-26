@@ -63,10 +63,13 @@ const Root = styled('div')(( {theme} ) => ({
     },
     [`& .${classes.footer}`]: {
         textAlign: 'right',
-        [theme.breakpoints.up('sm')]: {
+        [theme.breakpoints.up('md')]: {
             position: 'fixed',
             right: 0,
-            bottom: 0
+            bottom: 0,
+        },
+        [theme.breakpoints.down('sm')]: {
+            display: 'none'
         }
     }
 }));
@@ -114,7 +117,7 @@ const Home: NextPage = () => {
         </h4>
         <p>
               &#127916; Series I am currently watching: The Office (second rewatch) <br />
-              {/* &#127918; Recently played: TitanFall 2, GTA V <br /> */}
+              &#127918; Recently played: God of War 4<br />
               &#128531; Compliment that heard the most: you look like you are in 7th/8th grade. <br/>
         </p>
       </Container>
