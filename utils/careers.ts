@@ -9,7 +9,7 @@ export interface Career {
 export const careers : Career[] = [
     {
         name: "Enosis Solutions",
-        position: "Software Engineer",
+        position: "Senior Software Engineer",
         timespan: "August, 2021 - Present",
         stack: "Angular",
         color: '#55d2bb'

@@ -61,7 +61,7 @@ type navProps = {
 const Navigationbar = ({themeKey, changeTheme}: navProps) => {
     const router = useRouter();
     const [value, setValue] = useState(0);
-    const [checked, setChecked] = useState(-1);
+    const [checked, setChecked] = useState(0);
 
     useEffect(()=> {
         if (window.localStorage?.getItem('theme') === '1') {
@@ -94,7 +94,7 @@ const Navigationbar = ({themeKey, changeTheme}: navProps) => {
                         })}
                     </Tabs>
                     <Switch checked={checked === 1} onChange={handleThemeChange} />
-                    <img src={themeKey===darkTheme ? darthLogo : jediLogo} alt="theme" />
+                    <img src={themeKey === darkTheme ? darthLogo : jediLogo} alt="theme" />
                 </Toolbar>
             </AppBar>
             <Toolbar />
