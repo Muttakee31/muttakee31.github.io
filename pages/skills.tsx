@@ -14,8 +14,8 @@ const classes = {
     tab: 'tab',
     tabStyle: 'tabStyle',
     cardContent: 'cardContent',
-
 }
+
 const Root = styled('div')(( {theme} ) => ({
     [`& .${classes.main}`]: {
         display: 'flex',
