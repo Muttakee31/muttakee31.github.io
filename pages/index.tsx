@@ -62,15 +62,6 @@ const Root = styled('div')(( {theme} ) => ({
         }
     },
     [`& .${classes.footer}`]: {
-        textAlign: 'right',
-        [theme.breakpoints.up('md')]: {
-            position: 'fixed',
-            right: 0,
-            bottom: 0,
-        },
-        [theme.breakpoints.down('sm')]: {
-            display: 'none'
-        }
     }
 }));
 
@@ -122,9 +113,6 @@ const Home: NextPage = () => {
         </p>
       </Container>
       <div className={classes.footer}>
-          <a href="http://barneysvideoresume.com/" target="_blank" rel="noreferrer" style={{fontSize: '0.7em'}}>
-              unimpressed?click here to view an ideal resume &#128517;
-          </a>
       </div>
     </Root>
   )
