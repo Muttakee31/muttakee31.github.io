@@ -74,7 +74,7 @@ const Home: NextPage = () => {
                   I am from Dhaka, Bangladesh. Computers always amazed me since I was a child.
                   Making the decision to pursue a degree in computer science was one of the easiest decision I ever took to be honest.
                   I love building new stuffs and learning new tech.
-                  I have almost three years experience of working as full stack developer and specialize in geolocation and data visualization.
+                  I have experience of working as a full stack developer for over three years and specialize in geolocation and data visualization.
                   Now I am looking for a higher studies opportunity and hoping to be a part of the community who are always pushing the boundaries of knowledge.
                   <br />
               </Grid>
@@ -118,4 +118,4 @@ const Home: NextPage = () => {
   )
 }
 
-export default Home
+export default Home;

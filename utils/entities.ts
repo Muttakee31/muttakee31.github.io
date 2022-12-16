@@ -40,6 +40,11 @@ export const entities:  Entity[] = [
         image: "https://img.icons8.com/color/48/000000/html-5--v1.png",
     },
     {
+        tab: 0,
+        name: "F#",
+        image: "https://upload.wikimedia.org/wikipedia/commons/6/66/F_Sharp_logo.svg",
+    },
+    {
         tab: 1,
         name: "Django",
         image: "https://img.icons8.com/color/48/000000/django.png",
@@ -136,6 +141,21 @@ export const entities:  Entity[] = [
     },
     {
         tab: 4,
+        name: "Azure Event Hubs",
+        image: "https://img.icons8.com/fluency/48/000000/azure-1.png",
+    },
+    {
+        tab: 4,
+        name: "Azure Table Storage",
+        image: "https://img.icons8.com/fluency/48/000000/azure-1.png",
+    },
+    {
+        tab: 4,
+        name: "AWS S3",
+        image: "https://img.icons8.com/color/48/null/amazon-web-services.png",
+    },
+    {
+        tab: 4,
         name: "Firebase Auth",
         image: "https://img.icons8.com/color/48/000000/firebase.png",
     },
@@ -148,5 +168,10 @@ export const entities:  Entity[] = [
         tab: 4,
         name: "Chrome extension",
         image: "https://img.icons8.com/color/48/000000/chrome.png",
+    },
+    {
+        tab: 4,
+        name: "TeamCity",
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/TeamCity_Icon.svg/800px-TeamCity_Icon.svg.png",
     },
 ]
