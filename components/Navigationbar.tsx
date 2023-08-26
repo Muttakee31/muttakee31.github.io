@@ -55,10 +55,11 @@ const Root = styled('div')(( {theme} ) => ({
 
 type navProps = {
     themeKey: Theme,
+    children: React.ReactNode,
     changeTheme: ()=> void
 }
 
-const Navigationbar = ({themeKey, changeTheme}: navProps) => {
+const Navigationbar = ({themeKey, children, changeTheme}: navProps) => {
     const router = useRouter();
     const [value, setValue] = useState(0);
     const [checked, setChecked] = useState(0);
@@ -79,26 +80,29 @@ const Navigationbar = ({themeKey, changeTheme}: navProps) => {
     };
 
     return (
-        <Root>
-            <AppBar position="fixed" color="inherit" className={classes.appBar}>
-                <Toolbar className={classes.toolbarPublic}>
-                    <div className={classes.header}>
-                        Hey there, I am Saad
-                    </div>
-                    <Tabs value={value} onChange={handleTabChange} aria-label="nav tabs"
-                          variant="scrollable" allowScrollButtonsMobile className={classes.tabContainer}>
-                        {navItems.map((item, idx) => {
-                            return(
-                                <LinkTab label={item.title} href={item.url} key={idx} className={classes.tabStyle}/>
-                            )
-                        })}
-                    </Tabs>
-                    <Switch checked={checked === 1} onChange={handleThemeChange} />
-                    <img src={themeKey === darkTheme ? darthLogo : jediLogo} alt="theme" />
-                </Toolbar>
-            </AppBar>
-            <Toolbar />
-        </Root>
+        <>
+            <Root>
+                <AppBar position="fixed" color="inherit" className={classes.appBar}>
+                    <Toolbar className={classes.toolbarPublic}>
+                        <div className={classes.header}>
+                            Hey there, I am Saad
+                        </div>
+                        <Tabs value={value} onChange={handleTabChange} aria-label="nav tabs"
+                            variant="scrollable" allowScrollButtonsMobile className={classes.tabContainer}>
+                            {navItems.map((item, idx) => {
+                                return(
+                                    <LinkTab label={item.title} href={item.url} key={idx} className={classes.tabStyle}/>
+                                )
+                            })}
+                        </Tabs>
+                        <Switch checked={checked === 1} onChange={handleThemeChange} />
+                        <img src={themeKey === darkTheme ? darthLogo : jediLogo} alt="theme" />
+                    </Toolbar>
+                </AppBar>
+                <Toolbar />
+            </Root>
+            {children}
+        </>
     );
 }
 
