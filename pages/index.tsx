@@ -1,6 +1,8 @@
 import type {NextPage} from 'next';
 import {Container, Grid} from "@mui/material";
 import {styled} from "@mui/material/styles";
+import ParticleAnimation from '../components/ParticleAnimation';
+import zIndex from '@mui/material/styles/zIndex';
 
 const classes = {
     container: `container`,
@@ -31,13 +33,14 @@ const Root = styled('div')(( {theme} ) => ({
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        alignItems: 'center'  
+        alignItems: 'center'
     },
     [`& .${classes.grid}`]: {
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-between',
-        alignItems: 'center'
+        alignItems: 'center',
+        zIndex: 100 
     },
     [`& .${classes.description}`]: {
         textAlign: 'center'
@@ -68,54 +71,54 @@ const Root = styled('div')(( {theme} ) => ({
 const Home: NextPage = () => {
   return (
     <Root className={classes.container}>
-      <Container className={classes.main}>
-          <Grid container className={classes.grid}>
-              <Grid item md={6} className={classes.description}>
-                  I am from Dhaka, Bangladesh. Computers always amazed me since I was a child.
-                  Making the decision to pursue a degree in computer science was one of the easiest decision I ever took to be honest.
-                  I love building new stuffs and learning new tech.
-                  I have experience of working as a full stack developer for over three years and specialize in geolocation and data visualization.
-                  Now I am looking for a higher studies opportunity and hoping to be a part of the community who are always pushing the boundaries of knowledge.
-                  <br />
-              </Grid>
-              <Grid item md={6} className={classes.imageContainer}>
-                  <img src="./dp.jpg" alt="Me" height={200} width={200} className={classes.dp} />
-              </Grid>
-          </Grid>
+        <ParticleAnimation />
+        <Container className={classes.main}>
+            <Grid container className={classes.grid}>
+                <Grid item md={6} className={classes.description}>
+                    From Dhaka Bangladesh. <br />
+                    I have experience of working as a full stack developer for over four years. <br />
+                    In my free time, I watch football or browse memes, or just do absolutely nothing. <br />
+                    <br />
+                </Grid>
+                <Grid item md={6} className={classes.imageContainer}>
+                    <img src="./dp.jpg" alt="Me" height={200} width={200} className={classes.dp} />
+                </Grid>
+            </Grid>
 
-      <div style={{textAlign: 'center'}}>
-          You can find me here -
-          <br />
-          <br />
-          <a href="https://www.github.com/muttakee31/" target="_blank" rel="noreferrer">
-              <img src="https://img.icons8.com/ios-glyphs/48/000000/github.png" alt="GitHub" className={classes.image}/>
-          </a>
-          <a href="mailto:muttakee9@gmail.com" target="_blank" rel="noreferrer">
-              <img src="https://img.icons8.com/color/48/000000/gmail-new.png" alt="Gmail" className={classes.image}/>
-          </a>
-          <a href="https://www.linkedin.com/in/saad-al-muttakee-5aa399158/">
-              <img src="https://img.icons8.com/color/48/000000/linkedin.png" alt="Linkedin" className={classes.image}/>
-          </a>
-          <a href="https://www.facebook.com/muttakee9/" target="_blank" rel="noreferrer">
-              <img src="https://img.icons8.com/color/48/000000/facebook-new.png" alt="facebook" className={classes.image}/>
-          </a>
-          <a href="https://www.twitter.com/muttakee31/" target="_blank" rel="noreferrer">
-              <img src="https://img.icons8.com/fluency/48/000000/twitter.png" alt="Twitter" className={classes.image}/>
-          </a>
+        <div style={{textAlign: 'center', zIndex: 100}}>
+            You can find me here -
+            <br />
+            <br />
+            <a href="https://www.github.com/muttakee31/" target="_blank" rel="noreferrer">
+                <img src="https://img.icons8.com/ios-glyphs/48/000000/github.png" alt="GitHub" className={classes.image}/>
+            </a>
+            <a href="mailto:muttakee9@gmail.com" target="_blank" rel="noreferrer">
+                <img src="https://img.icons8.com/color/48/000000/gmail-new.png" alt="Gmail" className={classes.image}/>
+            </a>
+            <a href="https://www.linkedin.com/in/saad-al-muttakee-5aa399158/">
+                <img src="https://img.icons8.com/color/48/000000/linkedin.png" alt="Linkedin" className={classes.image}/>
+            </a>
+            <a href="https://www.facebook.com/muttakee9/" target="_blank" rel="noreferrer">
+                <img src="https://img.icons8.com/color/48/000000/facebook-new.png" alt="facebook" className={classes.image}/>
+            </a>
+            <a href="https://www.twitter.com/muttakee31/" target="_blank" rel="noreferrer">
+                <img src="https://img.icons8.com/fluency/48/000000/twitter.png" alt="Twitter" className={classes.image}/>
+            </a>
+
+            <h4>
+                Some fun facts
+            </h4>
+            <ul style={{textAlign: 'start', listStyleType: 'none'}}>
+                <li>&#127916; Series I am currently watching: Young sheldon, Community</li>
+                <li>&#127918; Recently played: Stray (I forgot when I played this)</li>
+                <li>&#128531; Compliment that heard the most: you look like you are in 7th/8th grade</li>
+            </ul>
+            </div>
+        </Container>
+        <div className={classes.footer}>
         </div>
-        <h4>
-          Some fun facts
-        </h4>
-        <p>
-              &#127916; Series I am currently watching: The Office (second rewatch) <br />
-              &#127918; Recently played: God of War 4<br />
-              &#128531; Compliment that heard the most: you look like you are in 7th/8th grade. <br/>
-        </p>
-      </Container>
-      <div className={classes.footer}>
-      </div>
     </Root>
-  )
+    )
 }
 
 export default Home;
