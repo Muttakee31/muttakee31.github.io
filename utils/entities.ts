@@ -21,11 +21,6 @@ export const entities:  Entity[] = [
     },*/
     {
         tab: 0,
-        name: "C++",
-        image: "https://img.icons8.com/color/48/000000/c-plus-plus-logo.png",
-    },
-    {
-        tab: 0,
         name: "C#",
         image: "https://img.icons8.com/color/48/000000/c-sharp-logo.png",
     },
@@ -33,6 +28,11 @@ export const entities:  Entity[] = [
         tab: 0,
         name: "Typescript",
         image: "https://img.icons8.com/color/48/000000/typescript.png",
+    },
+    {
+        tab: 0,
+        name: "C++",
+        image: "https://img.icons8.com/color/48/000000/c-plus-plus-logo.png",
     },
     {
         tab: 0,
