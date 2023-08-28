@@ -36,13 +36,18 @@ export const entities:  Entity[] = [
     },
     {
         tab: 0,
+        name: "F#",
+        image: "https://upload.wikimedia.org/wikipedia/commons/6/66/F_Sharp_logo.svg",
+    },
+    {
+        tab: 0,
         name: "HTML",
         image: "https://img.icons8.com/color/48/000000/html-5--v1.png",
     },
     {
         tab: 0,
-        name: "F#",
-        image: "https://upload.wikimedia.org/wikipedia/commons/6/66/F_Sharp_logo.svg",
+        name: "CSS",
+        image: "https://img.icons8.com/color/48/000000/css3.png",
     },
     {
         tab: 1,
@@ -61,6 +66,11 @@ export const entities:  Entity[] = [
     },
     {
         tab: 1,
+        name: "ASP .Net Web API",
+        image: "../logos/net-core.png",
+    },
+    {
+        tab: 1,
         name: "Next.js",
         image: "../logos/next-js.svg",
     },
@@ -73,11 +83,6 @@ export const entities:  Entity[] = [
         tab: 1,
         name: "Ionic",
         image: "https://img.icons8.com/external-tal-revivo-color-tal-revivo/48/000000/external-ionic-a-complete-open-source-sdk-for-hybrid-mobile-app-development-logo-color-tal-revivo.png"
-    },
-    {
-        tab: 2,
-        name: "CSS",
-        image: "https://img.icons8.com/color/48/000000/css3.png",
     },
     {
         tab: 2,
@@ -103,6 +108,16 @@ export const entities:  Entity[] = [
         tab: 2,
         name: "Material UI",
         image: "https://img.icons8.com/color/48/000000/material-ui.png",
+    },
+    {
+        tab: 2,
+        name: "RxJS",
+        image: "../logos/rxjs.png",
+    },
+    {
+        tab: 2,
+        name: "Chakra UI",
+        image: "https://img.icons8.com/color/96/chakra-ui.png",
     },
     {
         tab: 3,
@@ -142,6 +157,11 @@ export const entities:  Entity[] = [
     {
         tab: 4,
         name: "Azure Event Hubs",
+        image: "https://img.icons8.com/fluency/48/000000/azure-1.png",
+    },
+    {
+        tab: 4,
+        name: "Azure App Insight",
         image: "https://img.icons8.com/fluency/48/000000/azure-1.png",
     },
     {
