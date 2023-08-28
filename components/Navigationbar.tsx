@@ -82,7 +82,7 @@ const Navigationbar = ({themeKey, children, changeTheme}: navProps) => {
     return (
         <>
             <Root>
-                <AppBar position="fixed" color="inherit" className={classes.appBar}>
+                <AppBar position="fixed" color="transparent" className={classes.appBar}>
                     <Toolbar className={classes.toolbarPublic}>
                         <div className={classes.header}>
                             Hey there, I am Saad
