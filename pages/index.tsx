@@ -90,7 +90,7 @@ const Home: NextPage = () => {
             <br />
             <br />
             <a href="https://www.github.com/muttakee31/" target="_blank" rel="noreferrer">
-                <img src="https://img.icons8.com/ios-glyphs/48/000000/github.png" alt="GitHub" className={classes.image}/>
+                <img src="../logos/github.png" alt="GitHub" className={classes.image}/>
             </a>
             <a href="mailto:muttakee9@gmail.com" target="_blank" rel="noreferrer">
                 <img src="https://img.icons8.com/color/48/000000/gmail-new.png" alt="Gmail" className={classes.image}/>
