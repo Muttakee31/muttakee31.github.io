@@ -58,7 +58,7 @@ const ParticleAnimation = () => {
                 },
                 move: {
                     enable: true,
-                    speed: 7,
+                    speed: 4,
                     direction: "none",
                     outModes: "out"
                 } 

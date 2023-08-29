@@ -11,6 +11,7 @@ import {useRouter} from "next/router";
 
 const classes = {
     appBar: `appBar`,
+    transparentAppBar: 'transparentAppBar',
     toolbarPublic: `toolbar`,
     header: 'header',
     tabContainer: 'tabContainer',
@@ -20,6 +21,10 @@ const Root = styled('div')(( {theme} ) => ({
     [`& .${classes.appBar}`]: {
         borderBottom: `1px solid ${theme.palette.divider}`,
         boxShadow: theme.palette.mode === 'dark' ? '1px 14px 43px -1px rgba(42, 36, 22, 0.34)' :'1px 14px 43px -1px rgba(213, 219, 233, 0.66)',
+    },
+    [`& .${classes.transparentAppBar}`]: {
+        borderBottom: `none`,
+        boxShadow: 'none',
     },
     [`& .${classes.toolbarPublic}`]: {
         flexWrap: 'wrap',
@@ -68,6 +73,7 @@ const Navigationbar = ({themeKey, children, changeTheme}: navProps) => {
         if (window.localStorage?.getItem('theme') === '1') {
             setChecked(1);
         }
+        console.log(router.pathname);
         setValue(paths.indexOf(router.pathname));
     }, [router.pathname])
 
@@ -82,7 +88,7 @@ const Navigationbar = ({themeKey, children, changeTheme}: navProps) => {
     return (
         <>
             <Root>
-                <AppBar position="fixed" color="transparent" className={classes.appBar}>
+                <AppBar position="fixed" color={router.pathname === "/" ? "transparent" : "inherit"} className={router.pathname === "/" ? classes.transparentAppBar : classes.appBar}>
                     <Toolbar className={classes.toolbarPublic}>
                         <div className={classes.header}>
                             Hey there, I am Saad
