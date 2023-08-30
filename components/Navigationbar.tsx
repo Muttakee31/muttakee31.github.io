@@ -51,7 +51,7 @@ const Root = styled('div')(( {theme} ) => ({
     },
     [`& .${classes.tabContainer}`]: {
         [theme.breakpoints.down('sm')]: {
-            width: '70%',
+            width: '88%',
         }
     },
     [`& .${classes.tabStyle}`]: {
