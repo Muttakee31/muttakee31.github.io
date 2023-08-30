@@ -47,7 +47,7 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
     return (
         <>
             <Head>
-                <title>Portfolio</title>
+                <title>Saad Al Muttakee - Software Engineer</title>
                 <meta name="viewport" content="width=device-width,initial-scale=1" />
                 {/*<link rel="apple-touch-icon" href="/images/icons/icon-192x192.png" />
                 <link rel="icon" href="/images/icons/icon-72x72.png" />

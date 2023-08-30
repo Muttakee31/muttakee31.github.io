@@ -2,12 +2,14 @@ import * as React from 'react';
 import {useEffect, useState} from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
-import {Switch, Tabs, Theme} from "@mui/material";
+import {IconButton, Tabs, Theme} from "@mui/material";
 import {styled} from "@mui/material/styles";
-import {darthLogo, jediLogo, navItems, paths} from "../utils/constants";
-import {darkTheme} from "../utils/theme";
+import {navItems, paths} from "../utils/constants";
+import {lightTheme} from "../utils/theme";
 import LinkTab from "./LinkTab";
 import {useRouter} from "next/router";
+import LightModeIcon from '@mui/icons-material/LightMode';
+import DarkModeIcon from '@mui/icons-material/DarkMode';
 
 const classes = {
     appBar: `appBar`,
@@ -15,7 +17,9 @@ const classes = {
     toolbarPublic: `toolbar`,
     header: 'header',
     tabContainer: 'tabContainer',
-    tabStyle: 'tabStyle'
+    tabStyle: 'tabStyle',
+    lightThemeButton: 'lightThemeButton',
+    darkThemeButton: 'darkThemeButton'
 }
 const Root = styled('div')(( {theme} ) => ({
     [`& .${classes.appBar}`]: {
@@ -55,7 +59,13 @@ const Root = styled('div')(( {theme} ) => ({
             minWidth: 'auto',
             padding: '6px 8px',
         }
-    }
+    },
+    [`& .${classes.lightThemeButton}`]: {
+        color: '#FFFF99'
+    },
+    [`& .${classes.darkThemeButton}`]: {
+        color: '#191970'
+    },
 }));
 
 type navProps = {
@@ -73,7 +83,6 @@ const Navigationbar = ({themeKey, children, changeTheme}: navProps) => {
         if (window.localStorage?.getItem('theme') === '1') {
             setChecked(1);
         }
-        console.log(router.pathname);
         setValue(paths.indexOf(router.pathname));
     }, [router.pathname])
 
@@ -101,8 +110,12 @@ const Navigationbar = ({themeKey, children, changeTheme}: navProps) => {
                                 )
                             })}
                         </Tabs>
-                        <Switch checked={checked === 1} onChange={handleThemeChange} />
-                        <img src={themeKey === darkTheme ? darthLogo : jediLogo} alt="theme" />
+                        <IconButton className={themeKey === lightTheme ? classes.darkThemeButton : classes.lightThemeButton}
+                            onClick={handleThemeChange}
+                            title={themeKey === lightTheme ? "Switch to dark mode": "Switch to light mode"}>
+                            {themeKey === lightTheme ? <DarkModeIcon /> : <LightModeIcon />}
+                        </IconButton>
+                        {/* <img src={themeKey === darkTheme ? darthLogo : jediLogo} alt="theme" /> */}
                     </Toolbar>
                 </AppBar>
                 <Toolbar />

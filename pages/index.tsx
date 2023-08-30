@@ -75,7 +75,7 @@ const Home: NextPage = () => {
         <Container className={classes.main}>
             <Grid container className={classes.grid}>
                 <Grid item md={6} className={classes.description}>
-                    From Dhaka Bangladesh. <br />
+                    From Dhaka, Bangladesh. <br />
                     I have experience of working as a full stack developer for over four years. <br />
                     In my free time, I watch football or browse memes, or just do absolutely nothing. <br />
                     <br />
