@@ -6,6 +6,15 @@ export interface Project {
 }
 export const projects: Project[] = [
     {
+        title: "Media Sales Intelligence platform",
+        description: [
+            "A SaaS solution for media salespeople to track business",
+            "Worked with Serverless, Event-driven architecture",
+            "Integrated services of Salesforce, Nylas, Outlook, Google Ad manager for business analyticcs"
+        ],
+        stack: [".NET Core", "ASP .NET MVC", "Angular", "SQL Server", "AngularJS", "Azure Services"]
+    },
+    {
         title: "Workforce tracking",
         description: [
             "A complete tracking solution to track worker and his distance from workplace",
