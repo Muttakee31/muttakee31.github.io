@@ -10,7 +10,7 @@ export const projects: Project[] = [
         description: [
             "A SaaS solution for media salespeople to track business",
             "Worked with Serverless, Event-driven architecture",
-            "Integrated services of Salesforce, Nylas, Outlook, Google Ad manager for business analyticcs"
+            "Integrated services of Salesforce, Nylas, Outlook, Google Ad manager for business analytics"
         ],
         stack: [".NET Core", "ASP .NET MVC", "Angular", "SQL Server", "AngularJS", "Azure Services"]
     },
