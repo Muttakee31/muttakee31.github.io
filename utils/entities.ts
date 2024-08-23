@@ -41,6 +41,11 @@ export const entities:  Entity[] = [
     },
     {
         tab: 0,
+        name: "Dart",
+        image: "https://img.icons8.com/color/48/000000/dart.png",
+    },
+    {
+        tab: 0,
         name: "HTML",
         image: "https://img.icons8.com/color/48/000000/html-5--v1.png",
     },
@@ -66,8 +71,8 @@ export const entities:  Entity[] = [
     },
     {
         tab: 1,
-        name: "ASP .Net Web API",
-        image: "../logos/net-core.png",
+        name: "ASP .Net MVC",
+        image: "../logos/net-mvc.png",
     },
     {
         tab: 1,
@@ -78,6 +83,11 @@ export const entities:  Entity[] = [
         tab: 1,
         name: "Angular",
         image: "https://img.icons8.com/external-tal-revivo-shadow-tal-revivo/48/000000/external-angular-a-typescript-based-open-source-web-application-framework-logo-shadow-tal-revivo.png"
+    },
+    {
+        tab: 1,
+        name: "Flutter",
+        image: "https://img.icons8.com/color/48/flutter.png",
     },
     {
         tab: 1,
@@ -120,6 +130,11 @@ export const entities:  Entity[] = [
         image: "https://img.icons8.com/color/96/chakra-ui.png",
     },
     {
+        tab: 2,
+        name: "Bloc",
+        image: "../logos/bloc.svg",
+    },
+    {
         tab: 3,
         name: "PostgreSQL",
         image: "https://img.icons8.com/color/48/000000/postgreesql.png",
@@ -140,6 +155,11 @@ export const entities:  Entity[] = [
         image: "https://img.icons8.com/color/48/000000/mongodb.png",
     },
     {
+        tab: 3,
+        name: "CosmosDB",
+        image: "../logos/cosmosdb.jpg",
+    },
+    {
         tab: 4,
         name: "Google Maps API",
         image: "https://img.icons8.com/color/48/000000/google-maps-new.png",
@@ -151,7 +171,7 @@ export const entities:  Entity[] = [
     },
     {
         tab: 4,
-        name: "Azure functions",
+        name: "Azure Functions",
         image: "https://img.icons8.com/fluency/48/000000/azure-1.png",
     },
     {
@@ -162,6 +182,11 @@ export const entities:  Entity[] = [
     {
         tab: 4,
         name: "Azure App Insight",
+        image: "https://img.icons8.com/fluency/48/000000/azure-1.png",
+    },
+    {
+        tab: 4,
+        name: "Azure Blob Storage",
         image: "https://img.icons8.com/fluency/48/000000/azure-1.png",
     },
     {
@@ -193,5 +218,10 @@ export const entities:  Entity[] = [
         tab: 4,
         name: "TeamCity",
         image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/TeamCity_Icon.svg/800px-TeamCity_Icon.svg.png",
+    },
+    {
+        tab: 4,
+        name: "Google Ad Manager",
+        image: "../logos/gam.png",
     },
 ]
