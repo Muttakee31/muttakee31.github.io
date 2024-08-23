@@ -15,6 +15,15 @@ export const projects: Project[] = [
         stack: [".NET Core", "ASP .NET MVC", "Angular", "SQL Server", "AngularJS", "Azure Services"]
     },
     {
+        title: "DevPro",
+        description: [
+            "Portfolio for a renewable power consultancy firm",
+            "Integrated CMS functionality for dynamic content generation",
+            "Used Next.js to build the frontend"
+        ],
+        stack: ["Next.js", "Strapi"]
+    },
+    {
         title: "Workforce tracking",
         description: [
             "A complete tracking solution to track worker and his distance from workplace",
