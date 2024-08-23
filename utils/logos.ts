@@ -1,10 +1,5 @@
 export const logos = [
     {
-      src: "https://img.icons8.com/color/48/bill-cipher.png",
-      width: 30, 
-      height: 30, 
-    },
-    {
       src: "https://img.icons8.com/color/48/real-madrid.png",
       width: 30, 
       height: 30, 
@@ -43,5 +38,10 @@ export const logos = [
       src: "../logos/shield.png",
       width: 30,
       height: 30,
-    }
+    },
+    {
+      src: "../logos/guandang.webp",
+      width: 30,
+      height: 30,
+    },
 ]
