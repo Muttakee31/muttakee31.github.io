@@ -8,10 +8,17 @@ export interface Career {
 
 export const careers : Career[] = [
     {
+        name: "Optimizely",
+        position: "Senior Developer",
+        timespan: "August, 2024 - Present",
+        stack: ".Net Core, React",
+        color: '#f24191'
+    },
+    {
         name: "Enosis Solutions",
         position: "Senior Software Engineer",
-        timespan: "August, 2021 - Present",
-        stack: "Angular",
+        timespan: "August, 2021 - August 2024",
+        stack: ".Net Core, Angular",
         color: '#55d2bb'
     },
     {

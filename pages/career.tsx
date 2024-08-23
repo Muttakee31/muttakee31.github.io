@@ -67,6 +67,9 @@ const Career: NextPage = () => {
                                             <div style={{ fontSize: '0.8em' }}>
                                                 {career.position}
                                             </div>
+                                            <div style={{ fontSize: '0.8em' }}>
+                                                {career.stack}
+                                            </div>
                                             <div style={{ fontSize: '0.8em', marginBottom: 1.5 }}>
                                                 {career.timespan}
                                             </div>
@@ -87,4 +90,4 @@ const Career: NextPage = () => {
     )
 }
 
-export default Career
+export default Career;
