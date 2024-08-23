@@ -109,7 +109,7 @@ const Home: NextPage = () => {
             </h4>
             <ul style={{textAlign: 'start', listStyleType: 'none'}}>
                 <li>&#127916; Series I am currently watching: Invincible, X-Men 97</li>
-                <li>&#128218; Recent books I read/am reading: Foundation series (on 4th, Foundation's Edge), Legacy of blood, ক্রাচের কর্নেল</li>
+                <li>&#128218; Recent books I read/am reading: Foundation series (on 4th, Foundation&apos;s Edge), Legacy of blood, ক্রাচের কর্নেল</li>
                 <li>&#127918; Recently played: Stray (I forgot when I played this)</li>
                 <li>&#128531; Compliment that heard the most: you look like you are in 7th/8th grade</li>
             </ul>
