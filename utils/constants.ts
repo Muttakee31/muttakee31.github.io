@@ -23,11 +23,11 @@ export const navItems: NavItem[] = [
         url: '/projects'
     },
     {
-        title: 'Research Interests',
-        url: '/research'
-    },
-    {
         title: 'Timeline',
         url: '/career'
+    },
+    {
+        title: 'Certifications',
+        url: '/certifications'
     }
 ];
