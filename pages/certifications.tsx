@@ -14,7 +14,7 @@ const classes = {
 }
 const Root = styled('div')(( {theme} ) => ({
     [`& .${classes.main}`]: {
-        width: '300px',
+        width: '80vw',
         marginX: '10vw'
     },
     [`& .${classes.container}`]: {

@@ -74,9 +74,10 @@ const Home: NextPage = () => {
         <Container className={classes.main}>
             <Grid container className={classes.grid}>
                 <Grid item md={6} className={classes.description}>
-                    From Dhaka, Bangladesh. <br />
-                    I have experience of working as a full stack developer for over four years. <br />
-                    In my free time, I watch football or browse memes, or just do absolutely nothing. <br />
+                    &#x1F4CD; Dhaka, Bangladesh. <br />
+                    &#x1F4BC; Software Engineer <br />
+                    &#x2615; Tea Enthusiast <br />
+                    &#x1F4A4; Always Tired<br />
                     <br />
                 </Grid>
                 <Grid item md={6} className={classes.imageContainer}>
@@ -108,9 +109,9 @@ const Home: NextPage = () => {
                 Some fun facts
             </h4>
             <ul style={{textAlign: 'start', listStyleType: 'none'}}>
-                <li>&#127916; Series I am currently watching: Invincible, X-Men 97</li>
-                <li>&#128218; Recent books I read/am reading: Foundation series (on 4th, Foundation&apos;s Edge), Legacy of blood, ক্রাচের কর্নেল</li>
-                <li>&#127918; Recently played: Stray (I forgot when I played this)</li>
+                <li>&#127916; now watching: Invincible, Severance, The Regime</li>
+                <li>&#128218; books I read/am reading: Foundation series (on 4th, Foundation&apos;s Edge), লাল সন্ত্রাস, ইসরাইলের উত্থান পতন</li>
+                <li>&#127918; Games played: Stray (I forgot when I played this)</li>
                 <li>&#128531; Compliment that heard the most: you look like you are in 7th/8th grade</li>
             </ul>
             </div>
