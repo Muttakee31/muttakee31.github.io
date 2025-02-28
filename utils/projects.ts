@@ -6,6 +6,14 @@ export interface Project {
 }
 export const projects: Project[] = [
     {
+        title: "Employee Management Portal",
+        description: [
+            "A CMS for managing employees and share updates",
+            "Worked on Optimizely CMS and its various features",
+        ],
+        stack: [".NET Core", "Optimizely CMS", "SQL Server", "Azure Services"]
+    },
+    {
         title: "Media Sales Intelligence platform",
         description: [
             "A SaaS solution for media salespeople to track business",

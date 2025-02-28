@@ -224,4 +224,9 @@ export const entities:  Entity[] = [
         name: "Google Ad Manager",
         image: "../logos/gam.png",
     },
+    {
+        tab: 4,
+        name: "Optimizely CMS",
+        image: "../logos/opti.png",
+    },
 ]
