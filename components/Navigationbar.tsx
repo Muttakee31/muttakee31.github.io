@@ -115,7 +115,6 @@ const Navigationbar = ({themeKey, children, changeTheme}: navProps) => {
                             title={themeKey === lightTheme ? "Switch to dark mode": "Switch to light mode"}>
                             {themeKey === lightTheme ? <DarkModeIcon /> : <LightModeIcon />}
                         </IconButton>
-                        {/* <img src={themeKey === darkTheme ? darthLogo : jediLogo} alt="theme" /> */}
                     </Toolbar>
                 </AppBar>
                 <Toolbar />
