@@ -2,7 +2,7 @@ import * as React from 'react';
 import {useState, useEffect} from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
-import {IconButton, Tabs, Theme, Drawer, List, ListItem, ListItemText, useMediaQuery, useTheme, ListItemButton} from "@mui/material";
+import {IconButton, Tabs, Theme, Drawer, List, ListItemText, ListItemButton} from "@mui/material";
 import {styled} from "@mui/material/styles";
 import {navItems, paths} from "../utils/constants";
 import {lightTheme} from "../utils/theme";
@@ -22,8 +22,6 @@ const classes = {
     lightThemeButton: 'lightThemeButton',
     darkThemeButton: 'darkThemeButton',
     menuButton: 'menuButton',
-    drawer: 'drawer',
-    drawerPaper: 'drawerPaper',
     drawerItem: 'drawerItem',
     drawerItemSelected: 'drawerItemSelected'
 }
@@ -77,14 +75,6 @@ const Root = styled('div')(( {theme} ) => ({
             display: 'none',
         },
     },
-    [`& .${classes.drawer}`]: {
-        width: '45vw',
-        backgroundColor: theme.palette.background.paper,
-    },
-    [`& .${classes.drawerPaper}`]: {
-        width: '45vw',
-        backgroundColor: theme.palette.background.paper,
-    },
     [`& .${classes.tabContainer}`]: {
         [theme.breakpoints.down('md')]: {
             display: 'none',
@@ -125,6 +115,15 @@ const Navigationbar = ({themeKey, children, changeTheme}: navProps) => {
     const [value, setValue] = useState(0);
     const [checked, setChecked] = useState(0);
     const [mobileOpen, setMobileOpen] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY >= 100);
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
     useEffect(()=> {
         if (window.localStorage?.getItem('theme') === '1') {
@@ -132,7 +131,7 @@ const Navigationbar = ({themeKey, children, changeTheme}: navProps) => {
         }
         setValue(paths.indexOf(router.pathname));
     }, [router.pathname])
-    
+
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
     };
@@ -165,7 +164,7 @@ const Navigationbar = ({themeKey, children, changeTheme}: navProps) => {
                             primary={item.title}
                             sx={{
                                 '& .MuiTypography-root': {
-                                    color: value === idx ? 'rgb(26, 127, 143)' : 'inherit'
+                                    color: value === idx && themeKey === lightTheme ? 'rgb(26, 127, 143)' : 'inherit'
                                 }
                             }}
                         />
@@ -178,13 +177,16 @@ const Navigationbar = ({themeKey, children, changeTheme}: navProps) => {
     return (
         <>
             <Root>
-                <AppBar position="fixed" color={router.pathname === "/" ? "transparent" : "inherit"} className={router.pathname === "/" ? classes.transparentAppBar : classes.appBar}>
+                <AppBar position="fixed" 
+                    color={router.pathname === "/" && !isScrolled ? "transparent" : "inherit"} 
+                    className={router.pathname === "/" && !isScrolled ? classes.transparentAppBar : classes.appBar}
+                >
                     <Toolbar className={classes.toolbarPublic}>
                         <div className={classes.header}>
                             Hey there, I am Saad
                         </div>
                         <Tabs value={value} onChange={handleTabChange} aria-label="nav tabs"
-                            variant="scrollable" allowScrollButtonsMobile className={classes.tabContainer}>
+                            variant="scrollable" className={classes.tabContainer}>
                             {navItems.map((item, idx) => {
                                 return(
                                     <LinkTab label={item.title} href={item.url} key={idx} className={classes.tabStyle}/>
@@ -213,11 +215,14 @@ const Navigationbar = ({themeKey, children, changeTheme}: navProps) => {
                     anchor="left"
                     open={mobileOpen}
                     onClose={handleDrawerToggle}
-                    classes={{
-                        paper: classes.drawerPaper,
-                    }}
                     ModalProps={{
                         keepMounted: true,
+                    }}
+                    sx={{
+                        '& .MuiDrawer-paper': {
+                            width: '45vw',
+                            boxSizing: 'border-box',
+                        },
                     }}
                 >
                     {drawer}
