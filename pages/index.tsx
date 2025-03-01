@@ -42,7 +42,8 @@ const Root = styled('div')(( {theme} ) => ({
         zIndex: 100 
     },
     [`& .${classes.description}`]: {
-        textAlign: 'center'
+        textAlign: 'center',
+        margin: 'auto'
     },
     [`& .${classes.dp}`]: {
         borderRadius: '50%',
@@ -73,14 +74,14 @@ const Home: NextPage = () => {
         <ParticleAnimation />
         <Container className={classes.main}>
             <Grid container className={classes.grid}>
-                <Grid item md={6} className={classes.description}>
+                <Grid item xl={6} md={12} className={classes.description}>
                     &#x1F4CD; Dhaka, Bangladesh. <br />
                     &#x1F4BC; Software Engineer <br />
                     &#x2615; Tea Enthusiast <br />
                     &#x1F4A4; Always Tired<br />
                     <br />
                 </Grid>
-                <Grid item md={6} className={classes.imageContainer}>
+                <Grid item xl={6} md={12} className={classes.imageContainer}>
                     <img src="./dp.jpg" alt="Me" height={200} width={200} className={classes.dp} />
                 </Grid>
             </Grid>
