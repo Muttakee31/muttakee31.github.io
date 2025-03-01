@@ -47,7 +47,6 @@ const Root = styled('div')(( {theme} ) => ({
         fontWeight: 'bold'
     },
     [`& .${classes.btnStyle}`]: {
-        margin: '4px',
         padding: '15px 45px',
         textAlign: 'center',
         transition: '0.5s',
