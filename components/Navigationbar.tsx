@@ -1,8 +1,8 @@
 import * as React from 'react';
-import {useEffect, useState} from 'react';
+import {useState, useEffect} from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
-import {IconButton, Tabs, Theme} from "@mui/material";
+import {IconButton, Tabs, Theme, Drawer, List, ListItem, ListItemText, useMediaQuery, useTheme, ListItemButton} from "@mui/material";
 import {styled} from "@mui/material/styles";
 import {navItems, paths} from "../utils/constants";
 import {lightTheme} from "../utils/theme";
@@ -10,6 +10,7 @@ import LinkTab from "./LinkTab";
 import {useRouter} from "next/router";
 import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
+import MenuIcon from '@mui/icons-material/Menu';
 
 const classes = {
     appBar: `appBar`,
@@ -19,8 +20,14 @@ const classes = {
     tabContainer: 'tabContainer',
     tabStyle: 'tabStyle',
     lightThemeButton: 'lightThemeButton',
-    darkThemeButton: 'darkThemeButton'
+    darkThemeButton: 'darkThemeButton',
+    menuButton: 'menuButton',
+    drawer: 'drawer',
+    drawerPaper: 'drawerPaper',
+    drawerItem: 'drawerItem',
+    drawerItemSelected: 'drawerItemSelected'
 }
+
 const Root = styled('div')(( {theme} ) => ({
     [`& .${classes.appBar}`]: {
         borderBottom: `1px solid ${theme.palette.divider}`,
@@ -45,9 +52,7 @@ const Root = styled('div')(( {theme} ) => ({
     [`& .${classes.header}`]: {
         fontSize: '1.25em',
         marginRight: 'auto',
-        [theme.breakpoints.down('md')]: {
-            display: 'none'
-        }
+        marginLeft: '16px'
     },
     [`& .${classes.tabContainer}`]: {
         [theme.breakpoints.down('sm')]: {
@@ -66,6 +71,47 @@ const Root = styled('div')(( {theme} ) => ({
     [`& .${classes.darkThemeButton}`]: {
         color: '#191970'
     },
+    [`& .${classes.menuButton}`]: {
+        margin: theme.spacing(2),
+        [theme.breakpoints.up('md')]: {
+            display: 'none',
+        },
+    },
+    [`& .${classes.drawer}`]: {
+        width: '45vw',
+        backgroundColor: theme.palette.background.paper,
+    },
+    [`& .${classes.drawerPaper}`]: {
+        width: '45vw',
+        backgroundColor: theme.palette.background.paper,
+    },
+    [`& .${classes.tabContainer}`]: {
+        [theme.breakpoints.down('md')]: {
+            display: 'none',
+        },
+    },
+    [`& .${classes.drawerItem}`]: {
+        padding: theme.spacing(2),
+        margin: theme.spacing(1),
+        borderRadius: theme.shape.borderRadius,
+        '&:hover': {
+            backgroundColor: theme.palette.mode === 'dark' 
+                ? 'rgba(255, 255, 255, 0.08)'
+                : 'rgba(0, 0, 0, 0.04)',
+        }
+    },
+    [`& .${classes.drawerItemSelected}`]: {
+        backgroundColor: theme.palette.mode === 'dark' 
+            ? 'rgba(255, 255, 255, 0.16)'
+            : 'rgba(0, 0, 0, 0.08)',
+        borderLeft: `4px solid ${theme.palette.primary.main}`,
+        borderRadius: `0 ${theme.shape.borderRadius}px ${theme.shape.borderRadius}px 0`,
+        '&:hover': {
+            backgroundColor: theme.palette.mode === 'dark' 
+                ? 'rgba(255, 255, 255, 0.24)'
+                : 'rgba(0, 0, 0, 0.12)',
+        }
+    },
 }));
 
 type navProps = {
@@ -78,6 +124,7 @@ const Navigationbar = ({themeKey, children, changeTheme}: navProps) => {
     const router = useRouter();
     const [value, setValue] = useState(0);
     const [checked, setChecked] = useState(0);
+    const [mobileOpen, setMobileOpen] = useState(false);
 
     useEffect(()=> {
         if (window.localStorage?.getItem('theme') === '1') {
@@ -85,6 +132,10 @@ const Navigationbar = ({themeKey, children, changeTheme}: navProps) => {
         }
         setValue(paths.indexOf(router.pathname));
     }, [router.pathname])
+    
+    const handleDrawerToggle = () => {
+        setMobileOpen(!mobileOpen);
+    };
 
     const handleThemeChange = () => {
         setChecked(checked * -1);
@@ -93,6 +144,36 @@ const Navigationbar = ({themeKey, children, changeTheme}: navProps) => {
     const handleTabChange = (event: React.SyntheticEvent, newValue: number) => {
         setValue(newValue);
     };
+
+    const handleDrawerItemClick = (url: string, index: number) => {
+        setValue(index);
+        router.push(url);
+        setMobileOpen(false);
+    };
+
+    const drawer = (
+        <div>
+            <List sx={{ width: '100%', padding: 1 }}>
+                {navItems.map((item, idx) => (
+                    <ListItemButton
+                        key={idx} 
+                        onClick={() => handleDrawerItemClick(item.url, idx)}
+                        selected={value === idx}
+                        className={`${classes.drawerItem} ${value === idx ? classes.drawerItemSelected : ''}`}
+                    >
+                        <ListItemText 
+                            primary={item.title}
+                            sx={{
+                                '& .MuiTypography-root': {
+                                    color: value === idx ? 'rgb(26, 127, 143)' : 'inherit'
+                                }
+                            }}
+                        />
+                    </ListItemButton>
+                ))}
+            </List>
+        </div>
+    );
 
     return (
         <>
@@ -115,9 +196,32 @@ const Navigationbar = ({themeKey, children, changeTheme}: navProps) => {
                             title={themeKey === lightTheme ? "Switch to dark mode": "Switch to light mode"}>
                             {themeKey === lightTheme ? <DarkModeIcon /> : <LightModeIcon />}
                         </IconButton>
+                        <IconButton
+                            color="inherit"
+                            aria-label="open drawer"
+                            edge="start"
+                            onClick={handleDrawerToggle}
+                            className={classes.menuButton}
+                        >
+                            <MenuIcon />
+                        </IconButton>
                     </Toolbar>
                 </AppBar>
                 <Toolbar />
+                <Drawer
+                    variant="temporary"
+                    anchor="left"
+                    open={mobileOpen}
+                    onClose={handleDrawerToggle}
+                    classes={{
+                        paper: classes.drawerPaper,
+                    }}
+                    ModalProps={{
+                        keepMounted: true,
+                    }}
+                >
+                    {drawer}
+                </Drawer>
             </Root>
             {children}
         </>
