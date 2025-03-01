@@ -75,8 +75,8 @@ const Home: NextPage = () => {
         <Container className={classes.main}>
             <Grid container className={classes.grid}>
                 <Grid item xl={6} md={12} className={classes.description}>
+                    &#x1F4BC; Software Engineer at Optimizely <br />
                     &#x1F4CD; Dhaka, Bangladesh. <br />
-                    &#x1F4BC; Software Engineer <br />
                     &#x2615; Tea Enthusiast <br />
                     &#x1F4A4; Always Tired<br />
                     <br />

@@ -21,7 +21,7 @@ const Root = styled('div')(( {theme} ) => ({
         display: 'flex',
         justifyContent: 'center',
         flexDirection: 'column',
-        margin: '40px 20px'
+        margin: '40px 0'
     },
     [`& .${classes.card}`]: {
         margin: '24px 16px',
