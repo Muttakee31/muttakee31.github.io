@@ -1,5 +1,5 @@
 import Timeline from "@mui/lab/Timeline";
-import TimelineItem from "@mui/lab/TimelineItem";
+import TimelineItem, { timelineItemClasses } from "@mui/lab/TimelineItem";
 import TimelineSeparator from '@mui/lab/TimelineSeparator';
 import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineContent from '@mui/lab/TimelineContent';
@@ -7,9 +7,9 @@ import TimelineDot from '@mui/lab/TimelineDot';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import {careers} from "../utils/careers";
-import {Slide} from "@mui/material";
+import {Slide, useMediaQuery} from "@mui/material";
 import {NextPage} from "next";
-import {styled} from "@mui/material/styles";
+import {styled, useTheme} from "@mui/material/styles";
 
 const classes = {
     main: 'main',
@@ -20,7 +20,7 @@ const classes = {
 const Root = styled('div')(( {theme} ) => ({
     [`& .${classes.main}`]: {
         display: 'flex',
-        flex: 1,
+        flex: 0.2,
         width: '100vw',
         flexDirection: 'column',
         justifyContent: 'center',
@@ -28,7 +28,7 @@ const Root = styled('div')(( {theme} ) => ({
     },
     [`& .${classes.cardContainer}`]: {
         display: 'flex',
-        width: '100%'
+        width: '100%',
     },
     [`& .${classes.card}`]: {
         borderRadius: '8px',
@@ -36,6 +36,13 @@ const Root = styled('div')(( {theme} ) => ({
             width: '400px'
         }
     },
+    [`& .${timelineItemClasses.root}:before`]: {
+        [theme.breakpoints.down('md')]: {
+            flex: 0.1,
+            padding: 0,
+        },  
+    },
+
     /*[`& .${classes.cardContent}`]: {
         display: 'flex',
         flexDirection: 'column',
@@ -45,23 +52,32 @@ const Root = styled('div')(( {theme} ) => ({
 
 
 const Career: NextPage = () => {
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+    
     return (
         <Root>
-            <Timeline position="alternate">
+            <Timeline position={isMobile ? "right" : "alternate"}>
                 {careers.map((career, index) => {
                     return (
                     <TimelineItem key={index}>
                         <TimelineSeparator>
-                            <TimelineDot color={index%2===0 ? 'info':'secondary'} />
+                            <TimelineDot color={index % 2 === 0 ? 'info':'secondary'} />
                             <TimelineConnector />
                         </TimelineSeparator>
                         <TimelineContent>
-                            <div className={classes.cardContainer} style={{justifyContent: index % 2 === 0 ? "flex-start" : "flex-end"}}>
-                                <Slide direction={index % 2 === 0 ? "left" : "right"} in mountOnEnter unmountOnExit
-                                           style={{transitionDelay: '300ms', transitionDuration: '700ms'}}>
-                                    <Card className={classes.card} sx={{background: career.color, boxShadow: '0 13px 19px -6px ' + career.color}}>
+                            <div className={classes.cardContainer} 
+                                style={{ justifyContent: isMobile || index % 2 === 0 ? "flex-start" : "flex-end" }}>
+                                <Slide 
+                                    direction={index % 2 === 0 ? "left" : "right"} 
+                                    in mountOnEnter unmountOnExit
+                                    style={{ transitionDelay: '300ms', transitionDuration: '700ms' }}
+                                >
+                                    <Card className={classes.card} 
+                                        sx={{ background: career.color, boxShadow: '0 13px 19px -6px ' + career.color }}
+                                    >
                                         <CardContent>
-                                            <div style={{fontWeight: 500, fontSize: '1em'}}>
+                                            <div style={{ fontWeight: 500, fontSize: '1em' }}>
                                                 {career.name}
                                             </div>
                                             <div style={{ fontSize: '0.8em' }}>
@@ -73,9 +89,6 @@ const Career: NextPage = () => {
                                             <div style={{ fontSize: '0.8em', marginBottom: 1.5 }}>
                                                 {career.timespan}
                                             </div>
-                                            {/*<div style={{fontSize: '0.75em'}}>*/}
-                                            {/*    {career.stack}*/}
-                                            {/*</div>*/}
                                         </CardContent>
                                     </Card>
                                 </Slide>
