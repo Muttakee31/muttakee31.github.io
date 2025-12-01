@@ -229,4 +229,9 @@ export const entities:  Entity[] = [
         name: "Optimizely CMS",
         image: "../logos/opti.png",
     },
+    {
+        tab: 4,
+        name: "GraphQL",
+        image: "https://img.icons8.com/color/48/000000/graphql.png",
+    },
 ]
