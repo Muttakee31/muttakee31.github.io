@@ -27,16 +27,44 @@ const Root = styled('div')(( {theme} ) => ({
     },
     [`& .${classes.card}`]: {
         margin: '24px 16px',
-        border: "2px solid",
         width: '100%',
-        padding: '16px',
+        padding: '2px',
         alignContent: 'stretch',
         alignSelf: 'stretch',
-        borderImage: "linear-gradient(#8635b9, #1175bd, #15c5e1) 30",
-        boxShadow:  theme.palette.mode === 'light' ? '0 30px 40px -20px #a3a5ae' : '0 30px 40px -20px #0e1e68',
+        position: 'relative',
+        background: 'linear-gradient(135deg, #8635b9, #1175bd, #15c5e1)',
+        backgroundSize: '200% 200%',
+        borderRadius: '4px',
+        boxShadow: theme.palette.mode === 'light' ? '0 30px 40px -20px #a3a5ae' : '0 30px 40px -20px #0e1e68',
+        animation: 'gradientMove 3s ease infinite',
+        '&.MuiCard-root': {
+            background: 'linear-gradient(135deg, #8635b9, #1175bd, #15c5e1)',
+            backgroundSize: '200% 200%',
+            boxShadow: 'none',
+        },
+        '& .MuiCardContent-root': {
+            backgroundColor: theme.palette.mode === 'light' ? '#ffffff' : theme.palette.background.paper,
+            borderRadius: '2px',
+            padding: '16px',
+            height: '100%',
+            '&:last-child': {
+                paddingBottom: '16px',
+            }
+        },
         [`&:hover`]: {
             transform: 'translateY(-5px)'
         }
+    },
+    '@keyframes gradientMove': {
+        '0%': {
+            backgroundPosition: '0% 50%',
+        },
+        '50%': {
+            backgroundPosition: '100% 50%',
+        },
+        '100%': {
+            backgroundPosition: '0% 50%',
+        },
     },
     [`& .${classes.cardContent}`]: {
         display: 'flex',
@@ -64,8 +92,8 @@ const Projects: NextPage = () => {
                         <Grow in key={index} style={{transformOrigin: '0 0 0'}} timeout={1200}>
                             <Grid item md={5} sm={5} xs={11} className={classes.cardContainer}>
                                 <Card className={classes.card}>
-                                    <div style={{fontSize: '1.2em', fontWeight: 'bold', textAlign: 'center'}}>{project.title}</div>
                                     <CardContent className={classes.cardContent}>
+                                        <div style={{fontSize: '1.2em', fontWeight: 'bold', textAlign: 'center', marginBottom: '12px'}}>{project.title}</div>
                                         <ul>
                                             {project.description.map((p, idx) => {
                                                 return(
